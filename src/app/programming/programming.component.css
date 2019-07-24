@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Arapey");
+@import url("../app.component.css");
+
+.programming{
+    background:black;
+    height:100vh;
+    width:100%;
+}
+.list{
+    margin-top:50px;
+    font-size:40px;
+    color:white;
+    font-family: 'Raleway';
+}
