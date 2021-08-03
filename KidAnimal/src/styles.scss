@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+body { 
+    background-image: url('/KidAnimal/src/assets/images/kid_Animal_BG.png');
+    z-index: 1;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
