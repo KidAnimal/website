@@ -26,6 +26,15 @@ if((document.getElementsByClassName('title').length)>0){
     .addTo(controller);
 }
 
+if((document.getElementsByClassName('title').length)>0){
+    var backgroundScene = new ScrollMagic.Scene({
+        triggerElement:'.title',
+    })
+    .setClassToggle('.quoteText','title_Short_Slide_Up')
+    .duration(1000) 
+    .addTo(controller);
+}
+
 if((document.getElementsByClassName('aboutMain').length)>0){
 
     var illustrateScene = new ScrollMagic.Scene({

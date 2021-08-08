@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 @import url("https://fonts.googleapis.com/css?family=Arapey");
-
-//COLOURS 
+@import url("../app/global_scss/variables.scss");
 
 div.viewport {
 	height: 100vh ;
@@ -336,15 +335,15 @@ nav ul li a:hover {
 }
 .quoteText
 {
+    transform: rotate(90deg);
 	font-family: 'Raleway', 'Arial', 'Helvetica', 'sans-serif';
     color: white;
     font-size: 2.5em;
     position: absolute;
     margin-top: 22%;
-    transform: rotate(90deg);
     left: -13%;
-    -webkit-animation: 2s ease-out 0s 1 slide_Up;
-    animation: 2s ease-out 0s 1 slide_Up;
+    -webkit-animation: 2s ease-out 0s 1 title_Slide_Up;
+    animation: 2s ease-out 0s 1 title_Slide_Up;
 }
 .quoteText:hover
 {
@@ -357,17 +356,33 @@ nav ul li a:hover {
 	animation: short_Slide_Up 1s ease-in-out forwards; 
 }
 
-@keyframes slide_Up
+.title_Short_Slide_Up { 
+	animation: title_Short_Slide_Up 3s ease-in-out forwards;
+}
+
+@keyframes title_Slide_Up
 {
 	0%
 	{
-		transform:translateX(-400px);
+		transform:rotate(90deg) translateX(400px);
 		opacity:0;
 	}
 	100%
 	{
-		transform:translateX(0%);
+		transform:rotate(90deg) translateX(0%);
 		opacity:1;
+	}
+} 
+
+@keyframes title_Short_Slide_Up
+{
+	0%
+	{
+		transform:rotate(90deg) translateX(0px);
+	}
+	100%
+	{
+		transform:rotate(90deg) translateX(-100px);
 	}
 } 
 
@@ -705,7 +720,6 @@ nav ul li a:hover {
 }
 .contact{
 	opacity:0;
-	transform: translateX(100px);
 	transition:all 2s ease-out;
 }
 .contact.fade-in{
