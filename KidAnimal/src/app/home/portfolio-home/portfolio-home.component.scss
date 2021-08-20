@@ -1,0 +1,54 @@
+@import url("../../app.component.scss");
+
+$primary: #D46A6A;
+$full-height: 100vh;
+$background: #0D0D0D;
+
+/*Portfolio Section */
+
+.portfolio
+{
+	background: $background;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	overflow:hidden;
+	zoom:1;
+	color: white;
+	font-family:'Helvetica Neue', 'Raleway',Arial, Helvetica, sans-serif;
+	top: 200vh;
+	height:$full-height;
+}
+.portHeader
+{
+	margin-right:25%;
+	margin-left:4%;
+}
+.portHeadContainer
+{
+	padding-bottom:3%;
+}
+.portSep
+{
+	width:10%;
+}
+.portfolioLine
+{
+	position:relative;
+	margin-left:30%;
+	top:100px;
+}
+.portfolioText
+{
+	float:right;
+	margin-right:10%;
+}
+.rowPort
+ {
+	 display: flex;
+	 
+ }
+.columnPort
+{
+	flex: 50%;
+}

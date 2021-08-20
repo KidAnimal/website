@@ -1,0 +1,92 @@
+@import url("../../app.component.scss");
+
+$primary: #D46A6A;
+$full-height: 100vh;
+$background: #0D0D0D;
+
+.aboutSection { 
+    background: url('../../../assets/images/rough_Background.757ae741d51f99d17d12.png') 0 0/cover no-repeat $background;
+    position: absolute;
+    margin-bottom: 0;
+    padding: 0;
+    top: 100vh;
+    height: 100%;
+    width:100%;
+}
+/*About*/
+
+.about
+{
+	width:100%;
+	color: white;
+	font-family:'Helvetica Neue', 'Raleway',Arial, Helvetica, sans-serif;
+	
+}
+.aboutSection
+{
+	// background:$background;
+	/* background-image:url(../assets/images/rough_Background.png); */
+    background-repeat: no-repeat;
+    background-size: cover;
+	position: absolute;
+	top: $full-height;
+	height:$full-height;
+}
+.aboutMain
+{
+	float:left;
+	position: absolute;
+	font-family:'Hevetica Neue','Raleway',Arial, Helvetica, sans-serif;
+	font-weight:100;
+	font-size:100px;
+	margin-left:10%;
+	margin-right:50%;
+}
+.aboutMain:hover
+{
+	color:white;
+	position: absolute;
+	font-weight:100;
+	margin-right:55%;
+}
+.aboutImage
+{
+	z-index:99;
+	margin-top:200px;
+	margin-right:10%;
+	width:25%;
+	min-width:350px;
+	float: right;
+	-webkit-box-shadow: 70px 70px 0px 0px $primary;
+	-moz-box-shadow: 70px 70px 0px 0px $primary;
+	box-shadow: 70px 70px 0px 0px $primary;
+}
+.aboutImage:hover
+{
+	opacity:0.4;
+	transition-duration: 1s;
+	-webkit-box-shadow: 118px 119px 100px 0px rgba(0,0,0,1);
+	-moz-box-shadow: 118px 119px 100px 0px rgba(0,0,0,1);
+	box-shadow: 118px 119px 100px 0px rgba(0,0,0,1);
+}
+.aboutImage_Wrapper
+{
+	position:relative;
+}
+.aboutPicText
+{
+	position:absolute;
+	font-size:2em;
+}
+.aboutLine1
+{
+	position:relative;
+	margin-top:30%;
+	margin-left:-30px;
+}
+
+@media screen and (max-width:48em) {
+    .aboutImage {
+        float: none;
+    }
+}

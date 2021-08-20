@@ -8,6 +8,10 @@ import { DesignComponent } from './design/design.component';
 import { IllustrationComponent } from './illustration/illustration.component';
 import { ProgrammingComponent } from './programming/programming.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { PortfolioHomeComponent } from './home/portfolio-home/portfolio-home.component';
+import { AboutHomeComponent } from './home/about-home/about-home.component';
+import { ContactComponent } from './contact/contact.component';
+import { HeroHomeComponent } from './home/hero-home/hero-home.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     DesignComponent,
     IllustrationComponent,
     ProgrammingComponent,
-    NavbarComponent
+    NavbarComponent,
+    ContactComponent,
+    AboutHomeComponent,
+    PortfolioHomeComponent,
+    HeroHomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,60 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url("../app.component.scss");
 
-.row{
-    margin-top:100px;
-}
 
-.section { 
-    top: 225vh;
-    margin: 0;
-    padding: 0;
-}
 
-.column h2{
-    margin-left: 30%;
-}
-.contact{
-    height:100vh;
-    color:white;
-    font-family:'Raleway';
-    font-size:30px;
-    
-}
-.contactContainer{
-    position: absolute;
-    margin-left:70%;
-    margin-top:30%;
-}
-.contactContainer span{
-    white-space: initial;
-    display: block;
-}
-.content { 
-    position: absolute;
-}
 
-.heroImage { 
-    height: 100vh;
-    background-image: url('../../assets/images/hero_image.jpg');
-    z-index: 100;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.aboutSection { 
-    background: url('../../assets/images/rough_Background.757ae741d51f99d17d12.png') 0 0/cover no-repeat #000;
-    position: absolute;
-    margin-bottom: 0;
-    padding: 0;
-    top: 100vh;
-    height: 100%;
-    width: 100vw;
-}
 

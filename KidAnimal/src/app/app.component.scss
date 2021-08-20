@@ -1,9 +1,30 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 @import url("https://fonts.googleapis.com/css?family=Arapey");
-@import url("../app/global_scss/variables.scss");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('../app/global_scss/animations.scss');
+
+/* You can add global styles to this file, and also import other style files */
 
 $primary: #D46A6A;
 $full-height: 100vh;
+$background: #0D0D0D;
+
+.row{
+    margin-top:100px;
+}
+
+.section { 
+    margin: 0;
+    padding: 0;
+}
+
+.column h2{
+    margin-left: 30%;
+}
+.content { 
+    position: absolute;
+}
+
 
 div.viewport {
 	height: $full-height ;
@@ -58,13 +79,6 @@ div.viewport-a {
 	-ms-transition: all 1s ease-in;
 	-o-transition: all 1s ease-in;
 	transition: all 1s ease-in;
-}
-@keyframes come-in
-{
-	to
-	{
-		transform: translateY(0);
-	}
 }
 .animateBlock.aboutPicture
 {
@@ -363,117 +377,9 @@ nav ul li a:hover {
 	animation: title_Short_Slide_Up 3s ease-in-out forwards;
 }
 
-@keyframes title_Slide_Up
-{
-	0%
-	{
-		transform:rotate(90deg) translateX(400px);
-		opacity:0;
-	}
-	100%
-	{
-		transform:rotate(90deg) translateX(0%);
-		opacity:1;
-	}
-} 
-
-@keyframes title_Short_Slide_Up
-{
-	0%
-	{
-		transform:rotate(90deg) translateX(0px);
-	}
-	100%
-	{
-		transform:rotate(90deg) translateX(-100px);
-	}
-} 
-
-@keyframes short_Slide_Up
-{
-	0%
-	{
-		transform:translateY(0px);
-	}
-	100%
-	{
-		transform:translateY(-40px);
-	}
-} 
-
 /*Gallery*/
 
-/*About*/
 
-.about
-{
-	width:100%;
-	color: white;
-	font-family:'Helvetica Neue', 'Raleway',Arial, Helvetica, sans-serif;
-	
-}
-.aboutSection
-{
-	background:#000000;
-	/* background-image:url(../assets/images/rough_Background.png); */
-    background-repeat: no-repeat;
-    background-size: cover;
-	position: absolute;
-	top: $full-height;
-	height:$full-height;
-}
-.aboutMain
-{
-	float:left;
-	position: absolute;
-	font-family:'Hevetica Neue','Raleway',Arial, Helvetica, sans-serif;
-	font-weight:100;
-	font-size:100px;
-	margin-left:10%;
-	margin-right:50%;
-}
-.aboutMain:hover
-{
-	color:white;
-	position: absolute;
-	font-weight:100;
-	margin-right:55%;
-}
-.aboutImage
-{
-	z-index:99;
-	margin-top:200px;
-	margin-right:10%;
-	width:25%;
-	min-width:350px;
-	float: right;
-	-webkit-box-shadow: 70px 70px 0px 0px $primary;
-	-moz-box-shadow: 70px 70px 0px 0px $primary;
-	box-shadow: 70px 70px 0px 0px $primary;
-}
-.aboutImage:hover
-{
-	opacity:0.4;
-	transition-duration: 1s;
-	-webkit-box-shadow: 118px 119px 100px 0px rgba(0,0,0,1);
-	-moz-box-shadow: 118px 119px 100px 0px rgba(0,0,0,1);
-	box-shadow: 118px 119px 100px 0px rgba(0,0,0,1);
-}
-.aboutImage_Wrapper
-{
-	position:relative;
-}
-.aboutPicText
-{
-	position:absolute;
-	font-size:2em;
-}
-.aboutLine1
-{
-	position:relative;
-	margin-top:30%;
-	margin-left:-30px;
-}
 .illustrate{
 	opacity:0;
 	transform: translateY(50px);
@@ -508,56 +414,6 @@ nav ul li a:hover {
 	color:grey;
 }
 
-/*Portfolio Section */
-
-.portfolio
-{
-	position: absolute;
-	background: #000000;
-	background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-	/* background:#333333; */
-	overflow:hidden;
-	zoom:1;
-	color: white;
-	font-family:'Helvetica Neue', 'Raleway',Arial, Helvetica, sans-serif;
-	top: 200vh;
-	height:$full-height;
-}
-.portHeader
-{
-	margin-right:25%;
-	margin-left:4%;
-}
-.portHeadContainer
-{
-	padding-bottom:3%;
-}
-.portSep
-{
-	width:10%;
-}
-.portfolioLine
-{
-	position:relative;
-	margin-left:30%;
-	top:100px;
-}
-.portfolioText
-{
-	float:right;
-	margin-right:10%;
-}
-.rowPort
- {
-	 display: flex;
-	 
- }
-.columnPort
-{
-	flex: 50%;
-}
 .slideContainer
 {
 	overflow:hidden;
@@ -769,16 +625,6 @@ nav ul li a:hover {
 	-webkit-animation-duration: 1.5s;
 	animation-name: fade;
 	animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-	from {opacity: .4}
-	to {opacity: 1}
-}
-
-@keyframes fade {
-	from {opacity: .4}
-	to {opacity: 1}
 }
 
 /*MOBILE*/
@@ -1134,7 +980,7 @@ nav ul li a:hover {
     }
 }
 
-@media screen and (max-width:48em) {
+
     .wrap ul.wrap-nav>li {
         width: 100%;
         padding: 20px 0;
@@ -1164,9 +1010,3 @@ nav ul li a:hover {
         display: block;
         margin: 5px 0;
     }
-
-    .aboutImage {
-        float: none;
-    }
-
-}
