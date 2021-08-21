@@ -44,9 +44,9 @@ if((document.getElementsByClassName('aboutMain').length)>0){
     .addTo(controller);
 }
 
-if((document.getElementsByClassName('aboutLine1').length)>0){
+if((document.getElementsByClassName('aboutImage').length)>0){
     var aboutTextScene = new ScrollMagic.Scene({
-        triggerElement:'.aboutLine1'
+        triggerElement:'.aboutImage'
     })
     .setClassToggle('.sectionAboutText','fade-in')
     .addTo(controller);

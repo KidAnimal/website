@@ -1,0 +1,23 @@
+$primary: #D46A6A;
+$full-height: 100vh;
+$background: #535353;
+
+.contact-wrapper { 
+    background: black;
+    height: 300px;
+    color: white; 
+}
+
+.contact-table-wrapper { 
+    padding: 50px;
+}
+
+.contact-list { 
+    display: flex;
+    ul { 
+        list-style-type: none;
+    }
+    li {
+        // margin-bottom:10px;
+    }
+}

@@ -2,14 +2,12 @@
 
 $primary: #D46A6A;
 $full-height: 100vh;
-$background: #0D0D0D;
+$background: #535353;
 
 .aboutSection { 
     background: url('../../../assets/images/rough_Background.757ae741d51f99d17d12.png') 0 0/cover no-repeat $background;
-    position: absolute;
     margin-bottom: 0;
     padding: 0;
-    top: 100vh;
     height: 100%;
     width:100%;
 }
@@ -24,12 +22,9 @@ $background: #0D0D0D;
 }
 .aboutSection
 {
-	// background:$background;
-	/* background-image:url(../assets/images/rough_Background.png); */
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
     background-size: cover;
 	position: absolute;
-	top: $full-height;
 	height:$full-height;
 }
 .aboutMain
@@ -42,15 +37,9 @@ $background: #0D0D0D;
 	margin-left:10%;
 	margin-right:50%;
 }
-.aboutMain:hover
-{
-	color:white;
-	position: absolute;
-	font-weight:100;
-	margin-right:55%;
-}
 .aboutImage
 {
+    border:3px solid white;
 	z-index:99;
 	margin-top:200px;
 	margin-right:10%;
@@ -60,14 +49,6 @@ $background: #0D0D0D;
 	-webkit-box-shadow: 70px 70px 0px 0px $primary;
 	-moz-box-shadow: 70px 70px 0px 0px $primary;
 	box-shadow: 70px 70px 0px 0px $primary;
-}
-.aboutImage:hover
-{
-	opacity:0.4;
-	transition-duration: 1s;
-	-webkit-box-shadow: 118px 119px 100px 0px rgba(0,0,0,1);
-	-moz-box-shadow: 118px 119px 100px 0px rgba(0,0,0,1);
-	box-shadow: 118px 119px 100px 0px rgba(0,0,0,1);
 }
 .aboutImage_Wrapper
 {
@@ -84,6 +65,41 @@ $background: #0D0D0D;
 	margin-top:30%;
 	margin-left:-30px;
 }
+
+.illustrate{
+	opacity:0;
+	transform: translateY(50px);
+    transition:all 2s ease-out;
+}
+.illustrate.fade-in{
+	opacity: 1;
+	transform: translateY(0);
+}
+.shortBio
+{
+	position:relative;
+}
+.sectionAboutText
+{
+	font-size:15px;
+	font-style:italic;
+	float:left;
+	margin-top:-15%;
+	margin-right:60%;
+	margin-left:20%;
+	opacity:0;
+	transform: translateY(50px);
+	transition:all 2s ease-out;
+}
+.sectionAboutText.fade-in{
+	opacity: 1;
+	transform: translateY(0);
+}
+.sectionAboutText:hover
+{
+	color:grey;
+}
+
 
 @media screen and (max-width:48em) {
     .aboutImage {
