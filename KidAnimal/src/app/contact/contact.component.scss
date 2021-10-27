@@ -1,11 +1,15 @@
 $primary: #D46A6A;
 $full-height: 100vh;
-$background: #535353;
+$background: black;
 
 .contact-wrapper { 
+    display: flex;
+    justify-content: flex-end;
+    padding: 50px 200px 50px 50px;
     background: black;
-    height: 300px;
-    color: white; 
+    height: 210px;
+    color: lightgrey; 
+    text-align: right;
 }
 
 .contact-table-wrapper { 

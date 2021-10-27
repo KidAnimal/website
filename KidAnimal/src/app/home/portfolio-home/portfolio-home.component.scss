@@ -2,14 +2,14 @@
 
 $primary: #D46A6A;
 $full-height: 100vh;
-$background: #535353;
+$background: black;
 $img-border: 4px solid white;
 
 /*Portfolio Section */
 
 .portfolio
 {
-    background: #535353;
+    background: $background;
     zoom: 1;
     color: white;
     font-family: "Helvetica Neue", "Raleway", Arial, Helvetica, sans-serif;

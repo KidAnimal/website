@@ -12,7 +12,7 @@ if((document.getElementsByClassName('title').length)>0){
     var backgroundScene = new ScrollMagic.Scene({
         triggerElement:'.title',
     })
-    .setClassToggle('.heroImage','fadeOut')
+    .setClassToggle('.heroImage','fade-out')
     .duration(1000) 
     .addTo(controller);
 }
