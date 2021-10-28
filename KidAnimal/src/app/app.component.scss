@@ -1,11 +1,6 @@
-@import url('./master_scss/_variables.scss');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import '../styles.scss';
 
 /* You can add global styles to this file, and also import other style files */
-
-$primary: #D46A6A;
-$full-height: 100vh;
-$background: #0D0D0D;
 
 .row{
     margin-top:100px;
@@ -133,10 +128,6 @@ html[xmlns] .clearfix {
 	animation: short_Slide_Up 1s ease-in-out forwards; 
 }
 
-.title_Short_Slide_Up { 
-	animation: title_Short_Slide_Up 2s ease-in-out forwards;
-}
-
 /* Fading animation */
 .fade {
 	-webkit-animation-name: fade;
@@ -144,19 +135,6 @@ html[xmlns] .clearfix {
 	animation-name: fade;
 	animation-duration: 1.5s;
 }
-
-/* ANIMATIONS */
-
-@keyframes title_Short_Slide_Up{
-	0%
-	{
-		transform:translateY(0px);
-	}
-	100%
-	{
-		transform:translateY(-100px);
-	}
-} 
 
 /*MOBILE*/
 

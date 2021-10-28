@@ -1,8 +1,4 @@
-@import url("../../app.component.scss");
-
-$primary: #D46A6A;
-$full-height: 100vh;
-$background: black;
+@import '../../../styles.scss';
 
 .aboutSection { 
     background: url('../../../assets/images/rough_Background.757ae741d51f99d17d12.png') 0 0/cover no-repeat $background;

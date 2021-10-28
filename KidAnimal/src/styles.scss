@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 @import url("https://fonts.googleapis.com/css?family=Arapey");
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import '../src/app/master_scss/master.scss';
+@import '../src/app/master_scss/variables.scss';
+@import '../src/app/master_scss/animations.scss';
 
 body { 
     background-image: url('/KidAnimal/src/assets/images/kid_Animal_BG.png');

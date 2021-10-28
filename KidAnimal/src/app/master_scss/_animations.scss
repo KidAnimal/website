@@ -1,43 +1,16 @@
-@keyframes come-in{
-	to
-	{
-		transform: translateY(0);
-	}
-}
-
 @keyframes title_Slide_Up{
-	0%
-	{
-		transform:rotate(90deg) translateX(400px);
-		opacity:0;
-	}
-	100%
-	{
-		transform:rotate(90deg) translateX(0%);
-		opacity:1;
-	}
+	from{transform:rotate(90deg) translateX(0px);opacity:1}
+	to{transform:rotate(90deg) translateX(-200px);opacity:0}
 } 
 
 @keyframes title_Short_Slide_Up{
-	0%
-	{
-		transform:rotate(90deg) translateX(0px);
-	}
-	100%
-	{
-		transform:rotate(90deg) translateX(-100px);
-	}
+	from{transform:translateY(0px)}
+	to{transform:translateY(-100px)}
 } 
 
 @keyframes short_Slide_Up {
-	0%
-	{
-		transform:translateY(0px);
-	}
-	100%
-	{
-		transform:translateY(-40px);
-	}
+	from{transform:translateY(0px)}
+	to{transform:translateY(-40px)}
 } 
 
 @-webkit-keyframes fade {
@@ -48,6 +21,11 @@
 @keyframes fade {
 	from {opacity: .4}
 	to {opacity: 1}
+}
+
+@keyframes fadeOut {
+	0%{opacity: 1;}
+	100%{opacity: 0; visibility: hidden;}
 }
 
 @keyframes zoom {

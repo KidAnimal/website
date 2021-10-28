@@ -1,12 +1,10 @@
-$primary: #D46A6A;
-$full-height: 100vh;
-$background: black;
+@import '../../styles.scss';
 
 .contact-wrapper { 
     display: flex;
     justify-content: flex-end;
     padding: 50px 200px 50px 50px;
-    background: black;
+    background: $background;
     height: 210px;
     color: lightgrey; 
     text-align: right;
@@ -20,8 +18,5 @@ $background: black;
     display: flex;
     ul { 
         list-style-type: none;
-    }
-    li {
-        // margin-bottom:10px;
     }
 }

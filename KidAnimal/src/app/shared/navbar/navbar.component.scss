@@ -1,3 +1,4 @@
+@import '../../../styles.scss';
 a { 
     text-decoration: none;
     color: white;
@@ -18,7 +19,7 @@ ul {
         margin-right: 90px;
         
         :active, :hover, :focus {
-            color: #415974;
+            color: $secondary;
         }
     }
 }
