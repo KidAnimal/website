@@ -1,0 +1,16 @@
+.intro-wrapper {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+    height:100vh;
+}
+
+.intro-text {
+    position: absolute; 
+    bottom:30%;
+    font-family:'Bebas Neue','cursive';
+    font-size:20px;
+    color:white; 
+
+}

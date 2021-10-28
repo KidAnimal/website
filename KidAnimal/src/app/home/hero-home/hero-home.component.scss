@@ -16,22 +16,24 @@ $background: #0D0D0D;
 	text-align: right;
 	position: absolute;
 	top: 55%;
-	margin-left:67%;
+    right: 5%;
 	color: white;
+	border-right: 1px solid white;
 }
 .title
 {
 	margin:0;
-	padding-right:20%;
+	padding-right:10%;
 	padding-bottom:0;
-	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-family: 'Bebas Neue', cursive;
 	font-weight:100;
 	font-size:7vw;
 	color:white;
+    line-height: 120px;
 }
 .titleInfo
 {
-	padding-right:20%;
+	padding-right:10%;
 	display: block;
 	font-family:'Raleway', 'Arial', 'Helvetica', 'sans-serif';
 	font-weight:100;
@@ -54,12 +56,7 @@ $background: #0D0D0D;
     -webkit-animation: 2s ease-out 0s 1 title_Slide_Up;
     animation: 2s ease-out 0s 1 title_Slide_Up;
 }
-.quoteText:hover
-{
-	background:$primary;
-	padding:2%;
-	transition: 2s ease-in-out;
-}
+
 .heroImage { 
     height: 100vh;
     background-image: url('../../../assets/images/hero_image.jpg');

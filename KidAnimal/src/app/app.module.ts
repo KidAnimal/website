@@ -12,6 +12,7 @@ import { PortfolioHomeComponent } from './home/portfolio-home/portfolio-home.com
 import { AboutHomeComponent } from './home/about-home/about-home.component';
 import { ContactComponent } from './contact/contact.component';
 import { HeroHomeComponent } from './home/hero-home/hero-home.component';
+import { IntroductionComponent } from './introduction/introduction.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HeroHomeComponent } from './home/hero-home/hero-home.component';
     AboutHomeComponent,
     PortfolioHomeComponent,
     HeroHomeComponent,
+    IntroductionComponent,
   ],
   imports: [
     BrowserModule,

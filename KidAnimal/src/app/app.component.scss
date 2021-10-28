@@ -1,4 +1,5 @@
 @import url('./master_scss/_variables.scss');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -133,7 +134,7 @@ html[xmlns] .clearfix {
 }
 
 .title_Short_Slide_Up { 
-	animation: title_Short_Slide_Up 3s ease-in-out forwards;
+	animation: title_Short_Slide_Up 2s ease-in-out forwards;
 }
 
 /* Fading animation */
@@ -143,6 +144,19 @@ html[xmlns] .clearfix {
 	animation-name: fade;
 	animation-duration: 1.5s;
 }
+
+/* ANIMATIONS */
+
+@keyframes title_Short_Slide_Up{
+	0%
+	{
+		transform:translateY(0px);
+	}
+	100%
+	{
+		transform:translateY(-100px);
+	}
+} 
 
 /*MOBILE*/
 
@@ -256,9 +270,6 @@ html[xmlns] .clearfix {
     .slides {
         max-width: 100%;
     }
-    .quoteText {
-       
-    }
 } 
 
 @media screen and (max-width:48em) {
@@ -325,17 +336,6 @@ html[xmlns] .clearfix {
         color: white;
     }
 
-    .title {
-        margin: 0;
-        padding-right: 20%;
-        padding-bottom: 0;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-weight: 100;
-        font-size: 20vw;
-        background: $primary;
-        color: white;
-    }
-
     .titleInfo {
         padding-right: 20%;
         display: block;
@@ -387,8 +387,5 @@ html[xmlns] .clearfix {
 
     .slides {
         max-width: 100%;
-    }
-    .quoteText {
-       
     }
 }

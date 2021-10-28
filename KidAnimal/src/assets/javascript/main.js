@@ -21,7 +21,7 @@ if((document.getElementsByClassName('title').length)>0){
     var backgroundScene = new ScrollMagic.Scene({
         triggerElement:'.title',
     })
-    .setClassToggle('.title','short_Slide_Up')
+    .setClassToggle('.title','title_Short_Slide_Up')
     .duration(1000) 
     .addTo(controller);
 }

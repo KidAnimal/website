@@ -1,4 +1,11 @@
-<app-hero-home></app-hero-home>
-<app-about-home></app-about-home>
-<app-portfolio-home></app-portfolio-home>
-<app-contact></app-contact>
+
+<ng-container *ngIf="status === 'loading'"></ng-container>
+<ng-container *ngIf="status === 'intro'">
+    <app-introduction></app-introduction>
+</ng-container>
+<ng-container *ngIf="status === 'ready'"> 
+    <app-hero-home></app-hero-home>
+    <app-about-home></app-about-home>
+    <app-portfolio-home></app-portfolio-home>
+    <app-contact></app-contact>
+</ng-container>
