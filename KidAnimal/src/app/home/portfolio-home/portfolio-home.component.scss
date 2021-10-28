@@ -8,7 +8,7 @@
     zoom: 1;
     color: white;
     font-family: "Helvetica Neue", "Raleway", Arial, Helvetica, sans-serif;
-    height: 100vh;
+    height: $full-height;
     position: relative;
 }
 .portHeader
@@ -35,12 +35,7 @@
 	float:right;
 	margin-right:10%;
 }
-.rowPort
- {
-	 display: flex;
-	 
- }
-.columnPort
-{
-	flex: 50%;
+
+img { 
+	height: 420px;
 }

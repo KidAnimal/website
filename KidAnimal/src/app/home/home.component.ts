@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
   status = 'loading';
+
+  @HostListener('window:scroll', ['$event']) onScroll(event) {
+      console.log(event);
+      console.log(window.scrollY);
+    }
 
   constructor() { }
 
