@@ -1,7 +1,8 @@
 @import '../../../styles.scss';
 
 .aboutSection { 
-    background: url('../../../assets/images/rough_Background.757ae741d51f99d17d12.png') 0 0/cover no-repeat $background;
+    background: url('../../../assets/images/rough_Background.757ae741d51f99d17d12.png') 0 0/cover no-repeat, 
+	linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(25,25,25,1) 66%, rgba(0,0,0,1) 100%);
     margin-bottom: 0;
     padding: 0;
     height: 100%;
@@ -76,16 +77,19 @@
 }
 .sectionAboutText
 {
-	font-size:15px;
-	font-style:italic;
-	float:left;
-	margin-top:-15%;
-	margin-right:60%;
-	margin-left:20%;
-	opacity:0;
-	transform: translateY(50px);
-	transition:all 2s ease-out;
+	font-size: 15px;
+    font-style: italic;
+    float: left;
+    margin-top: -15%;
+    margin-right: 60%;
+    margin-left: 20%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 2s ease-out;
+    padding: 10px;
+    border: 1pxsolid white;
 }
+
 .sectionAboutText.fade-in{
 	opacity: 1;
 	transform: translateY(0);

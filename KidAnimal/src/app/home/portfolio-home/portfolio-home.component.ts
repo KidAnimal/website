@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioHomeComponent implements OnInit {
 
+  isVisible = '';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelected(selection:string):string {
+    if (selection !== "" && this.isVisible === selection) {
+      return this.isVisible = "";
+    } 
+    this.isVisible = selection; 
+    return this.isVisible;
   }
 
 }

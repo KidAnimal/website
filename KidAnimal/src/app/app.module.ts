@@ -13,6 +13,7 @@ import { AboutHomeComponent } from './home/about-home/about-home.component';
 import { ContactComponent } from './contact/contact.component';
 import { HeroHomeComponent } from './home/hero-home/hero-home.component';
 import { IntroductionComponent } from './introduction/introduction.component';
+import { SocialLinksComponent } from './shared/social-links/social-links.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { IntroductionComponent } from './introduction/introduction.component';
     PortfolioHomeComponent,
     HeroHomeComponent,
     IntroductionComponent,
+    SocialLinksComponent,
   ],
   imports: [
     BrowserModule,

@@ -82,6 +82,20 @@
 	animation: fadeOut 1s forwards;
 }
 
+.fade-in { 
+	animation: fadeIn 1s forwards;
+}
+
 .title_Slide_Up { 
 	animation: title_Slide_Up 2s ease-in-out forwards;
+}
+
+.pageBlockOne {
+    position: fixed;
+    z-index: 1000;
+    width:20px;
+    height:40px; 
+    background:white;
+    top:15%;
+    left:0;
 }

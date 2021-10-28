@@ -1,21 +1,52 @@
-
-
-
-  <div class="portfolio section">
-    <div class="portfolioMain">
-      <div class="rowPort">
-        <div class="columnPort">
-          <div class="portHeadContainer">
+<div class="portfolio section">
+  <div class="portfolioMain">
+    <div class="rowPort">
+      <div class="columnPort">
+        <div class="portHeadContainer">
+        </div>
+        <div class="portfolio-row">
+          <div class="section-wrapper">
+            <h2 (click)="onSelected('illustration')">Illustration</h2>
+            <div *ngIf="isVisible === 'illustration'" class="infoBoxWrapper">
+              <div class="lineToInfo"></div>
+              <div class="infoBoxInfo">
+                <ul class="infoText">
+                  <li>Adobe</li>
+                  <li>Adobe</li>
+                  <li>Adobe</li>
+                  <li>Adobe</li>
+                  <li>Adobe</li>
+                </ul>
+                <button class="outlineButton">More Work</button>
+              </div>
+            </div>
+            <a
+              *ngIf="isVisible === 'illustration'" 
+              routerLink ="/illustration" 
+              routerLinkActive="active">
+              <img class="slides aboutPicture" src="../assets/images/Pardonix-Planes.jpg">
+            </a>
           </div>
-          <div class="row">
-            <h2>Illustration</h2>
-            <a routerLink ="/illustration" routerLinkActive="active"><img class="slides aboutPicture" src="../assets/images/Pardonix-Planes.jpg"></a>
-            <h2>Programming</h2>
-            <a routerLink ="/programming" routerLinkActive="active"><img class="slides aboutPicture" src="../assets/images/programmingCover.jpg"></a>
-            <h2>Design</h2>
-            <a routerLink ="/design" routerLinkActive="active"><img class="slides aboutPicture" src="../assets/images/getOutCover.jpg"></a>
+          <div class="section-wrapper">
+            <h2 (click)="onSelected('programming')">Programming</h2>
+            <a
+              *ngIf="isVisible === 'programming'" 
+              routerLink ="/programming" 
+              routerLinkActive="active">
+              <img class="slides aboutPicture" src="../assets/images/programmingCover.jpg">
+            </a>
+          </div>
+          <div class="section-wrapper">
+            <h2 (click)="onSelected('design')">Design</h2>
+            <a 
+              *ngIf="isVisible === 'design'" 
+              routerLink ="/design" 
+              routerLinkActive="active">
+              <img class="slides aboutPicture" src="../assets/images/getOutCover.jpg">
+            </a>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

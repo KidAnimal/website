@@ -1,20 +1,22 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
+
+  @HostListener('window:scroll', ['$event']) onWindowScroll(e) {
+    console.log(e.target['scrollingElement'].scrollTop)
+    console.log('Scrolling');
+  }
 
   status = 'loading';
 
-  @HostListener('window:scroll', ['$event']) onScroll(event) {
-      console.log(event);
-      console.log(window.scrollY);
-    }
-
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     this.status = 'ready';
