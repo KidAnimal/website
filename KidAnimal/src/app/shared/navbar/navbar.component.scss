@@ -16,5 +16,30 @@ ul {
     li { 
         display: inline;
         margin-right: 90px;
+        
+        :active, :hover, :focus {
+            color: #415974;
+        }
+    }
+}
+
+.text-btn { 
+    background: none;
+    font-size: 16px;
+    font-family: 'Raleway';
+    color: white;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subLinks {
+    position: absolute;
+    display: flex;
+    margin-left: 135px;
+    flex-direction: column;
+
+    li:not(:first-child) { 
+        margin-top:25px;
     }
 }

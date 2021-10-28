@@ -11,10 +11,11 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.status = 'intro';
-    setTimeout(()=> {
-      this.status = 'ready';
-    },9600);
+    this.status = 'ready';
+    // this.status = 'intro';
+    // setTimeout(()=> {
+    //   this.status = 'ready';
+    // },9600);
   }
 
 }

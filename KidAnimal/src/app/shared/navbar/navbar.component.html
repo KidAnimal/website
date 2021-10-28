@@ -2,7 +2,19 @@
     <div class="navBar">
         <ul>
             <li><a routerLink ="/home" routerLinkActive="active">Home</a></li>
-            <li><a routerLink ="/illustration" routerLinkActive="active">Portfolio</a></li>
+            <li>
+                <button class="text-btn" 
+                        (click)="revealLinks = !revealLinks">
+                        Portfolio
+                </button> 
+                <ul class="subLinks" *ngIf="revealLinks">
+                    <li><a routerLink ="/Illustration" routerLinkActive="active">Illustration</a></li>
+                    
+                    <li><a routerLink ="/Design" routerLinkActive="active">Design</a></li>
+                    
+                    <li><a routerLink ="/Programming" routerLinkActive="active">Programming</a></li>
+                </ul>
+            </li>
             <li><a href="https://www.twitch.tv/kid_animal/profile/" routerLinkActive="active">Twitch</a></li>
         </ul>
     </div>
