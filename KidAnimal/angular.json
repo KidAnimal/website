@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-        "styleext": "scss",
+        "style": "scss",
           "style": "scss"
         }
       },
@@ -131,7 +131,7 @@
   "defaultProject": "KidAnimal",
   "schematics": {
     "@schematics/angular:component": {
-      "styleext": "scss",
+      "style": "scss",
       "style": "scss"
     }
   }
