@@ -1,15 +1,23 @@
 <div class="blankDiv"></div>
 <div class="mainArea section">
     <div class="quote">
-      <div class="pageBlockOne"></div>
-      <span class="quoteText">Out there somewhere probably failing...</span>
+      <span class="quoteText quoteTextNoLoop">Out there somewhere probably failing...</span>
+      <span class="quoteText quoteTextLoop">Out there somewhere probably failing...</span>
+      <span class="quoteText quoteTextLoop">Out there somewhere probably failing...</span>
+      <span class="quoteText quoteTextLoop">Out there somewhere probably failing...</span>
     </div>
     <app-navbar></app-navbar>
     <div class="heroWrapper">
       <div class="heroImageWrapper">
-        <div class="heroImage"></div>
-          <div id="heroText">
-            <h1 class="title">Kid Animal</h1>
+        <!-- <div class="lightLeaksVideo">
+          <video width="100vw" height = "100vh" autoplay loop>
+            <source src="../../../assets/videos/lightLeaks.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div> -->
+        <div class="heroImage" [ngClass]="(scrollHeight > 100) ? 'fade-out': (scollPassedPoint ? 'fade-in':'')"></div>
+          <div id="heroText" [ngStyle]="titleStyle(0.5)">
+            <h1 class="title"><div >Kid</div><div>Animal</div></h1>
             <span class="titleInfo">Illustration | Design | Programming</span>
           </div>
         </div>

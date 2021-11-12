@@ -1,0 +1,25 @@
+@import '../../../styles.scss';
+
+.pageBlock {
+    cursor: pointer;
+    position: fixed;
+    z-index: 1000;
+    width:20px;
+    height:40px; 
+    background:white;
+    left:0;
+
+    &:first-child { 
+        top:100px;
+    }
+    &:nth-child(2){ 
+        top:150px;
+    }
+    &:nth-child(3){ 
+        top:200px;
+    }
+}
+
+.highlightedSection { 
+    background: $secondary;
+}

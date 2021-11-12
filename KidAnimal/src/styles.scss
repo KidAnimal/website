@@ -17,3 +17,22 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: $secondary lightgrey;
+  }
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-track {
+    background: none;
+    visibility: hidden;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: $secondary;
+    border-radius: 20px;
+  }

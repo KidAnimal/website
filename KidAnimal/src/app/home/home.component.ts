@@ -1,16 +1,21 @@
-import { Component, HostListener, Inject, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, Input, OnInit } from '@angular/core';
+
+// Animations 
+import { basicTransition } from '../angular_animations/basicTransition';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  animations: [basicTransition]
 })
 
 export class HomeComponent implements OnInit {
 
-  @HostListener('window:scroll', ['$event']) onWindowScroll(e) {
-    console.log(e.target['scrollingElement'].scrollTop)
-    console.log('Scrolling');
+  scrollHeight:number; 
+  
+  @HostListener('window:ScrollTopHeight',['$event']) onScrollEvent(event):void {
+    this.scrollHeight = event.detail; 
   }
 
   status = 'loading';
@@ -20,6 +25,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.status = 'ready';
+    if(sessionStorage.getItem('home-scroll-height')){ 
+      const newEvent = new CustomEvent('ScrollToPageSection', {detail:sessionStorage.getItem('home-scroll-height')});
+      dispatchEvent(newEvent);  
+    }
     // this.status = 'intro';
     // setTimeout(()=> {
     //   this.status = 'ready';

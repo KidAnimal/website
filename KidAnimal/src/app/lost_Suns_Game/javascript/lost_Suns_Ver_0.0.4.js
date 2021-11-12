@@ -643,8 +643,6 @@ function loot() {
         window.localStorage.setItem(lootTable.name, JSON.stringify(lootTable));
         character.push(itemDrop);
         window.localStorage.setItem('loot', JSON.stringify(lootTable));
-
-        console.log(character);
     } else {
         console.log("You looted everything");
         return;
@@ -654,7 +652,6 @@ function loot() {
 function endLoot() {
     document.getElementById('loot').style = "display:none";
     document.getElementById('endLoot').style = "display:none";
-    console.log("End Loot");
 }
 
 //This is only for enemies. It checks for a further distance than distance(). 
@@ -738,7 +735,6 @@ function playerAttack(playerAttackRange) {
     if (playerAttackRange == true) {
         bossArray[0].health -= 30;
         swordSwing_1.play();
-        console.log(bossArray);
         window.localStorage.setItem('boss', JSON.stringify(bossArray));
     }
 }
@@ -816,7 +812,6 @@ let KillScreen = function () {
             values.push(Math.round(Math.sin(Math.PI * i / 100) * 255));
         }
         colorsArray = values;
-        console.log(StateStack);
         counter = 100;
         bossCounter = 500;
         character[0].health = 100;

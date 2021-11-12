@@ -4,8 +4,7 @@
     display: flex;
     justify-content: flex-end;
     padding: 50px 200px 50px 50px;
-    background: rgb(99,99,99);
-    background: linear-gradient(0deg, rgba(99,99,99,1) 0%, rgba(25,25,25,1) 66%, rgba(0,0,0,1) 100%);
+    background: #636363;
     height: 210px;
     color: lightgrey; 
     text-align: right;
@@ -19,5 +18,36 @@
     display: flex;
     ul { 
         list-style-type: none;
+    }
+}
+
+.small-contact-wrapper { 
+    display: flex;
+    justify-content: flex-end;
+    background: #636363;
+    height: 50px;
+    width:100%;
+    color: lightgrey; 
+    text-align: right;
+}
+
+.small-contact-table-wrapper { 
+    padding: 50px;
+}
+
+.small-contact-list { 
+    display: flex;
+    margin: auto 2%;
+    ul { 
+        font-family: 'Roboto';
+        list-style-type: none;
+    }
+    span a {
+        text-decoration: none;
+        color:lightgrey;
+
+        &:hover { 
+            color: $secondary;
+        }
     }
 }

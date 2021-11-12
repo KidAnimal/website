@@ -11,33 +11,44 @@
 {
 	text-align: right;
 	position: absolute;
-	top: 55%;
-    right: 5%;
+	bottom: 40px;
+    right: 90px;
 	color: white;
 	border-right: 1px solid white;
+    width: 500px; 
+    padding-right:2%;
 }
-.title
+
+.title div
 {
+    visibility: hidden;
 	margin:0;
-	padding-right:10%;
 	padding-bottom:0;
 	font-family: 'Bebas Neue', cursive;
 	font-weight:100;
-	font-size:7vw;
+	font-size:130px;
 	color: $primary;
     line-height: 120px;
+    animation:slide-from-left 2s forwards;
+    
+    &:last-child {
+        animation-delay: 1s;    
+    }
 }
+
 .titleInfo
 {
-	padding-right:10%;
 	display: block;
 	font-family:'Raleway', 'Arial', 'Helvetica', 'sans-serif';
 	font-weight:100;
-	font-size: 1vw;
+	font-size: 19px;
 	color:white;
+    line-height: 0;
 }
 .quote
 {
+    z-index: 1000;
+    position: relative;
 	transform: translate(300, 300) rotate(270deg);
 }
 .quoteText
@@ -46,9 +57,28 @@
 	font-family: 'Raleway', 'Arial', 'Helvetica', 'sans-serif';
     color: white;
     font-size: 2.5em;
+    left: -241px;
     position: absolute;
-    margin-top: 22%;
-    left: -13%;
+    top:45vh;
+    
+    &.quoteTextNoLoop { 
+        animation:initial_Title_Slide_Down 7.3s forwards linear;
+        animation-delay: 3s;
+    }
+    
+    &.quoteTextLoop { 
+        top:-45vh;
+        animation:title_Slide_Down 10s infinite; 
+        animation-timing-function: linear;
+    
+        &:nth-child(3) {
+            animation-delay:3.3s;
+        }
+        
+        &:nth-child(4) {
+            animation-delay:6.67s;
+        }
+    }
 }
 
 .heroImage { 
@@ -78,6 +108,26 @@
     background-attachment: fixed;
 }
 
+// .centerTriangle img { 
+//     position: absolute;
+//     left: 0;
+//     right: 0;
+//     top: 0;
+//     bottom: 0;
+//     margin: 10% auto auto auto;
+// }
+
+// .centerText { 
+//     position:absolute;
+//     font-size:20px; 
+//     font-family:'Roboto';
+//     left: 0;
+//     right: 0;
+//     top: 0;
+//     bottom: 0;
+//     margin: auto;
+// }
+
 .fade-out { 
 	animation: fadeOut 1s forwards;
 }
@@ -90,12 +140,38 @@
 	animation: title_Slide_Up 2s ease-in-out forwards;
 }
 
-.pageBlockOne {
-    position: fixed;
+.lightLeaksVideo {
     z-index: 1000;
-    width:20px;
-    height:40px; 
-    background:white;
-    top:15%;
-    left:0;
+    position: absolute;
+    top:0;
+}
+
+@media only screen and (min-width: 1224px) { }
+@media all and (min-width: 850px) and (max-width: 1024px) {}
+@media only screen and (min-width: 550px) and (max-width: 849px) {}
+
+@media only screen and (max-width: 549px) {
+
+    #heroText { 
+        bottom: 150px;
+        right: 55px;
+    }
+    
+    .quoteText { 
+        left: -200px;
+        font-size: 30px;
+    }
+
+    .title { 
+        margin-bottom:0px;
+            
+        div { 
+                font-size: 90px;
+                line-height: 85px;
+            }
+    }
+
+    .titleInfo { 
+        font-size:13px;
+    }
 }
