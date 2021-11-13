@@ -9,6 +9,12 @@
     <app-navbar></app-navbar>
     <div class="heroWrapper">
       <div class="heroImageWrapper">
+        <!-- <div class="lightLeaksVideo">
+          <video width="100vw" height = "100vh" autoplay loop>
+            <source src="../../../assets/videos/lightLeaks.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div> -->
         <div class="heroImage" [ngClass]="(scrollHeight > 100) ? 'fade-out': (scollPassedPoint ? 'fade-in':'')"></div>
           <div id="heroText" [ngStyle]="titleStyle(0.5)">
             <h1 class="title"><div >Kid</div><div>Animal</div></h1>

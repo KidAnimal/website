@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Component, ElementRef, HostListener, Inject, Input, OnInit, ViewChild } from '@angular/core';
 
 // ANIMATIONS 
@@ -10,11 +11,16 @@ import { ScrollHeight } from '../models/scrollheight.model';
 =======
 =======
 >>>>>>> 680b696c7283e4484d1a396f7ae5d926ac702ba9
+=======
+>>>>>>> 680b696c7283e4484d1a396f7ae5d926ac702ba9
 import { Component, HostListener, Inject, Input, OnInit } from '@angular/core';
 
 // Animations 
 import { basicTransition } from '../angular_animations/basicTransition';
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 680b696c7283e4484d1a396f7ae5d926ac702ba9
+=======
 >>>>>>> 680b696c7283e4484d1a396f7ae5d926ac702ba9
 =======
 >>>>>>> 680b696c7283e4484d1a396f7ae5d926ac702ba9
@@ -29,6 +35,7 @@ import { basicTransition } from '../angular_animations/basicTransition';
 export class HomeComponent implements OnInit {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   scrollHeight:number;
   
   scrollheights: ScrollHeight = {}
@@ -39,6 +46,10 @@ export class HomeComponent implements OnInit {
   @ViewChild('contact') contactSection: ElementRef; 
   
 
+=======
+  scrollHeight:number; 
+  
+>>>>>>> 680b696c7283e4484d1a396f7ae5d926ac702ba9
 =======
   scrollHeight:number; 
   
