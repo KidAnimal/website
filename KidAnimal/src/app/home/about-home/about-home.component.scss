@@ -5,8 +5,9 @@
 	linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(25,25,25,1) 66%, rgba(0,0,0,1) 100%);
     margin-bottom: 0;
     padding: 0;
-    height: 100%;
     width:100%;
+	background-repeat: no-repeat;
+    background-size: cover;
 }
 /*About*/
 
@@ -15,14 +16,9 @@
 	width:100%;
 	color: white;
 	font-family:'Helvetica Neue', 'Raleway',Arial, Helvetica, sans-serif;
-	
+	overflow: hidden;
 }
-.aboutSection
-{
-	background-repeat: no-repeat;
-    background-size: cover;
-	height:$full-height;
-}
+
 .aboutMain
 {
 	float:left;
@@ -32,6 +28,7 @@
 	font-size:100px;
 	margin-left:10%;
 	margin-right:50%;
+	top: 145vh;
 }
 .aboutImage
 {
@@ -58,15 +55,14 @@
 .aboutLine1
 {
 	position:relative;
-	margin-top:30%;
+	margin-top:25%;
 	margin-left:-30px;
 }
 
-.illustrate{
-	opacity:0;
-	transform: translateY(50px);
-    transition:all 2s ease-out;
+.illustrate { 
+	margin-top: 100px; 
 }
+
 .illustrate.fade-in{
 	opacity: 1;
 	transform: translateY(0);
@@ -83,25 +79,93 @@
     margin-top: -15%;
     margin-right: 60%;
     margin-left: 20%;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 2s ease-out;
     padding: 10px;
-    border: 1pxsolid white;
+    border: 1px solid white;
 }
 
-.sectionAboutText.fade-in{
-	opacity: 1;
-	transform: translateY(0);
-}
-.sectionAboutText:hover
+.quote
 {
-	color:grey;
+    z-index: 1000;
+    position: relative;
+	transform: translate(300, 300) rotate(270deg);
 }
-
-
-@media screen and (max-width:48em) {
-    .aboutImage {
-        float: none;
+.quoteText
+{
+    transform: rotate(90deg);
+	font-family: 'Raleway', 'Arial', 'Helvetica', 'sans-serif';
+    color: white;
+    font-size: 2.5em;
+    left: -169px;
+    position: absolute;
+    top:45vh;
+    
+    &.quoteTextNoLoop { 
+        animation:initial_Title_Slide_Down 7.3s forwards linear;
+        animation-delay: 3s;
+    }
+    
+    &.quoteTextLoop { 
+        top:-45vh;
+        animation:title_Slide_Down 10s infinite; 
+        animation-timing-function: linear;
+    
+        &:nth-child(3) {
+            animation-delay:3.3s;
+        }
+        
+        &:nth-child(4) {
+            animation-delay:6.67s;
+        }
     }
 }
+
+@media only screen and (min-width: 1224px) { 
+
+}
+
+
+@media all and (min-width: 850px) and (max-width: 1024px) {
+
+    .aboutMain { 
+        font-size: 50px;
+    }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 849px) {
+}
+
+@media only screen and (max-width: 549px) {
+
+    .quoteText { 
+        left: -145px;
+        font-size: 30px;
+    }
+
+    .aboutMain { 
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        font-weight: lighter;
+        font-size: 14px;
+        top: 144vh;
+        left: 92px;
+        text-align: center;
+    }
+
+    .aboutImage { 
+        margin-top:144px;
+        min-width: 285px; 
+        box-shadow:none;
+    }
+
+    .aboutSection { 
+        height: 100vh;
+    }
+
+    .sectionAboutText { 
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+
+

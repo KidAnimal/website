@@ -1,6 +1,13 @@
 <div class="navBar-wrapper"> 
     <div class="navBar">
-        <ul>
+        <ul class="sublinks">
+            <li (click)="navBarActive = !navBarActive" *ngIf="scrollHeight > 1 || navBarActive || mobileView">
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+            </li>
+        </ul>
+        <ul *ngIf = "!mobileView && !navBarActive && (scrollHeight < 1 || scrollHeight === undefined)">
             <li><a routerLink ="/home" routerLinkActive="active">Home</a></li>
             <li>
                 <button class="text-btn" 
@@ -8,14 +15,19 @@
                         Portfolio
                 </button> 
                 <ul class="subLinks" *ngIf="revealLinks">
-                    <li><a routerLink ="/Illustration" routerLinkActive="active">Illustration</a></li>
+                    <li><a routerLink ="illustration" routerLinkActive="active">Illustration</a></li>
                     
-                    <li><a routerLink ="/Design" routerLinkActive="active">Design</a></li>
+                    <li><a routerLink ="design" routerLinkActive="active">Design</a></li>
                     
-                    <li><a routerLink ="/Programming" routerLinkActive="active">Programming</a></li>
+                    <li><a routerLink ="programming" routerLinkActive="active">Programming</a></li>
                 </ul>
             </li>
             <li><a href="https://www.twitch.tv/kid_animal/profile/" routerLinkActive="active">Twitch</a></li>
         </ul>
+    </div>
+</div>
+
+<div *ngIf="navBarActive" class="side-navbar-wrapper"> 
+    <div class="side-navbar-info-container"> 
     </div>
 </div>

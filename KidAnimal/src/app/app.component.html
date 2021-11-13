@@ -1,3 +1,10 @@
-<div class="viewport viewport-a">
-  <router-outlet class="content"></router-outlet>
+<div 
+  (scroll)="scrollHandler($event)" 
+  class="viewport viewport-a"
+  [@routeAnimations]="prepareRoute(outlet)"
+  >
+  <router-outlet 
+    class="content"
+    #outlet="outlet">
+  </router-outlet>
 </div>

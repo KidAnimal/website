@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -8,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   revealLinks:boolean = false;
+  navBarActive: boolean = false;
+  mobileView: boolean = false; 
+  scrollHeight:number; 
   
+  @HostListener('window:ScrollTopHeight',['$event']) onScrollEvent(event):void {
+    this.scrollHeight = event.detail; 
+  }
+
+  @HostListener('window:resize',['$event']) onResizeEvent(event):void {
+    this.mobileView = window.innerWidth <= 800 ? true : false; 
+  }
+
   constructor() { }
 
   ngOnInit(): void {
+    if(window.innerWidth <= 800) { 
+      this.mobileView = true;
+    }
   }
 
 }

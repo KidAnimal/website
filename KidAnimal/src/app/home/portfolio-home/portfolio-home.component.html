@@ -1,4 +1,10 @@
 <div class="portfolio section">
+  <div class="quote">
+    <span class="quoteText quoteTextNoLoop">Growing Through My Weaknesses...</span>
+    <span class="quoteText quoteTextLoop">Growing Through My Weaknesses...</span>
+    <span class="quoteText quoteTextLoop">Growing Through My Weaknesses...</span>
+    <span class="quoteText quoteTextLoop">Growing Through My Weaknesses...</span>
+  </div>
   <div class="portfolioMain">
     <div class="rowPort">
       <div class="columnPort">
@@ -6,10 +12,13 @@
         </div>
         <div class="portfolio-row">
           <div class="section-wrapper">
-            <h2 (click)="onSelected('illustration')">Illustration</h2>
+            <h2 
+              [ngStyle]="titleStyle(5, 1700)" 
+              (click)="onSelected('illustration')">Illustration
+            </h2>
             <div *ngIf="isVisible === 'illustration'" class="infoBoxWrapper">
               <div class="lineToInfo"></div>
-              <div class="infoBoxInfo">
+              <!-- <div class="infoBoxInfo">
                 <ul class="infoText">
                   <li>Adobe</li>
                   <li>Adobe</li>
@@ -18,31 +27,75 @@
                   <li>Adobe</li>
                 </ul>
                 <button class="outlineButton">More Work</button>
-              </div>
+              </div> -->
             </div>
             <a
               *ngIf="isVisible === 'illustration'" 
-              routerLink ="/illustration" 
+              routerLink ="illustration" 
               routerLinkActive="active">
-              <img class="slides aboutPicture" src="../assets/images/Pardonix-Planes.jpg">
+              <img 
+                class="slides aboutPicture" 
+                src="../assets/images/Pardonix-Planes.jpg"
+                (click)="saveScrollHeight()"
+              >
             </a>
           </div>
           <div class="section-wrapper">
-            <h2 (click)="onSelected('programming')">Programming</h2>
+            <h2 
+              [ngStyle]="titleStyle(2, 2000)" 
+              (click)="onSelected('programming')">Programming
+            </h2>
+            <div *ngIf="isVisible === 'programming'" class="infoBoxWrapper">
+              <div class="lineToInfo"></div>
+              <!-- <div class="infoBoxInfo">
+                <ul class="infoText">
+                  <li>Adobe</li>
+                  <li>Adobe</li>
+                  <li>Adobe</li>
+                  <li>Adobe</li>
+                  <li>Adobe</li>
+                </ul>
+                <button class="outlineButton">More Work</button>
+              </div> -->
+            </div>
             <a
               *ngIf="isVisible === 'programming'" 
-              routerLink ="/programming" 
+              routerLink ="programming" 
               routerLinkActive="active">
-              <img class="slides aboutPicture" src="../assets/images/programmingCover.jpg">
+              <img 
+                class="slides aboutPicture" 
+                src="../assets/images/programmingCover.jpg"
+                (click)="saveScrollHeight()"
+              >
             </a>
           </div>
           <div class="section-wrapper">
-            <h2 (click)="onSelected('design')">Design</h2>
+            <h2 
+              [ngStyle]="titleStyle(3, 2000)" 
+              (click)="onSelected('design')">Design
+            </h2>
+            <div *ngIf="isVisible === 'design'" class="infoBoxWrapper">
+              <div class="lineToInfo"></div>
+              <!-- <div class="infoBoxInfo">
+                <ul class="infoText">
+                  <li>Adobe</li>
+                  <li>Adobe</li>
+                  <li>Adobe</li>
+                  <li>Adobe</li>
+                  <li>Adobe</li>
+                </ul>
+                <button class="outlineButton">More Work</button>
+              </div> -->
+            </div>
             <a 
               *ngIf="isVisible === 'design'" 
-              routerLink ="/design" 
+              routerLink ="design" 
               routerLinkActive="active">
-              <img class="slides aboutPicture" src="../assets/images/getOutCover.jpg">
+              <img 
+                class="slides aboutPicture" 
+                src="../assets/images/getOutCover.jpg"
+                (click)="saveScrollHeight()"
+              >
             </a>
           </div>
         </div>

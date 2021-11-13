@@ -20,7 +20,7 @@
 
 div.viewport {
 	height: $full-height;
-	overflow: auto ;
+	overflow: overlay;
 	width: 100% ;
 }
 div.viewport-a {
@@ -135,234 +135,22 @@ html[xmlns] .clearfix {
 	animation-duration: 1.5s;
 }
 
-/*MOBILE*/
 
-@media screen and (max-width:100em) {
-    .quote{
+/*
+@media only screen and (min-width: 1224px) { }
+
+
+@media all and (min-width: 850px) and (max-width: 1024px) {
+
+    .quoteText { 
+        left: -34%;
     }
-    .quoteText{
-        margin-left:100;
-        left:0;
-    }
-}
-@media screen and (max-width:90em) {
-    .aboutLine1 svg {}
-
-    .aboutImage {
-        margin-top: 250px;
-        margin-right: 20%;
-    }
-
-    .illustrate {
-        font-size: 130px;
-    }
-
-    .aboutMain {}
-
-    .shortBio {
-        margin-right: 0;
-        margin-left: 10%;
-    }
-
-    .aboutLine1 {
-        margin-left: -120px;
-        top: 150px;
-    }
-
-    .portHeader {
-        margin-right: 15%;
-        margin-left: 3%;
-    }
-
-    .portHeadContainer {
-        margin-top: 10%;
+    .social-media-links { 
+        color: blue;
     }
 }
 
-@media screen and (max-width: 55em) {
-    #heroText {
-        text-align: left;
-        position: absolute;
-        top: 55%;
-        margin-left: 0;
-        color: white;
-    }
+@media only screen and (min-width: 550px) and (max-width: 800px) {}
 
-    .title {
-        margin: 0;
-        padding-right: 20%;
-        padding-bottom: 0;
-        font-family: 'Bebas Neue', cursive;
-        font-weight: 100;
-        font-size: 20vw;
-        color: white;
-    }
-
-    .titleInfo {
-        padding-right: 20%;
-        display: block;
-        font-family: 'Raleway', 'Arial', 'Helvetica', 'sans-serif';
-        font-weight: 100;
-        font-size: 4vw;
-        color: white;
-    }
-
-    .illustrate {
-        font-size: 70%;
-    }
-
-    .aboutLine1 {
-        display: none;
-    }
-
-    .sectionAboutText {
-        margin-top: 0%;
-        margin-right: 30%;
-        margin-left: 0%;
-    }
-
-    .aboutImage {
-        float: left;
-        width: 50%;
-        min-width: 350px;
-        position: relative;
-        box-shadow: none;
-    }
-
-    .rowPort {
-        display: block;
-        margin-top: 7%;
-    }
-
-    .columnPort {
-        flex: 50%;
-    }
-
-    .slideContainer {
-        overflow: hidden;
-        max-width: 100%;
-        height: 600px;
-    }
-
-    .slides {
-        max-width: 100%;
-    }
-} 
-
-@media screen and (max-width:48em) {
-
-    .aboutImage {
-        float: none;
-    }
-
-}  
-@media screen and (max-width:100em) {
-    .quote{
-    }
-    .quoteText{
-        margin-left:100;
-        left:0;
-    }
-}
-@media screen and (max-width:90em) {
-    .aboutLine1 svg {}
-
-    .aboutImage {
-        margin-top: 250px;
-		margin-right: 20%;
-    }
-
-    .illustrate {
-        font-size: 130px;
-    }
-
-    .aboutMain {}
-
-    .shortBio {
-        margin-right: 0;
-        margin-left: 10%;
-    }
-
-    .aboutLine1 {
-        margin-left: -120px;
-        top: 150px;
-    }
-
-    .titleInfo {
-        -webkit-box-shadow: 0px -60px 0px 100px $primary;
-        -moz-box-shadow: 0px -60px 0px 100px $primary;
-        box-shadow: 0px -60px 0px 100px $primary;
-    }
-
-    .portHeader {
-        margin-right: 15%;
-        margin-left: 3%;
-    }
-
-    .portHeadContainer {
-        margin-top: 10%;
-    }
-}
-
-@media screen and (max-width: 55em) {
-    #heroText {
-        text-align: left;
-        position: absolute;
-        top: 55%;
-        margin-left: 0;
-        color: white;
-    }
-
-    .titleInfo {
-        padding-right: 20%;
-        display: block;
-        font-family: 'Raleway', 'Arial', 'Helvetica', 'sans-serif';
-        font-weight: 100;
-        font-size: 4vw;
-        -webkit-box-shadow: 0px -60px 0px 20px $primary;
-        -moz-box-shadow: 0px -60px 0px 20px $primary;
-        box-shadow: 0px -60px 0px 20px $primary;
-        color: white;
-    }
-
-    .illustrate {
-        font-size: 70%;
-    }
-
-    .aboutLine1 {
-        display: none;
-    }
-
-    .sectionAboutText {
-        margin-top: 0%;
-        margin-right: 30%;
-        margin-left: 0%;
-    }
-
-    .aboutImage {
-        float: left;
-        width: 50%;
-        min-width: 350px;
-        position: relative;
-        box-shadow: none;
-    }
-
-    .rowPort {
-        display: block;
-        margin-top: 7%;
-    }
-
-    .columnPort {
-        flex: 50%;
-    }
-
-    .slideContainer {
-        overflow: hidden;
-        max-width: 100%;
-        height: 600px;
-    }
-
-    .slides {
-        max-width: 100%;
-    }
-}
+@media only screen and (min-width: 320px) and (max-width: 500px) {}
+*/

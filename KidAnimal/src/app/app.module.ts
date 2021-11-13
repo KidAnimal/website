@@ -14,6 +14,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HeroHomeComponent } from './home/hero-home/hero-home.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { SocialLinksComponent } from './shared/social-links/social-links.component';
+import { PaginationComponent } from './shared/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SocialLinksComponent } from './shared/social-links/social-links.compone
     HeroHomeComponent,
     IntroductionComponent,
     SocialLinksComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,

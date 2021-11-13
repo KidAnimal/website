@@ -10,6 +10,7 @@
     font-family: "Helvetica Neue", "Raleway", Arial, Helvetica, sans-serif;
     height: $full-height;
     position: relative;
+	overflow: hidden;
 }
 .portHeader
 {
@@ -54,12 +55,17 @@ img {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+
+	h2 { 
+		font-size:100px;
+	}
 }
 
 .lineToInfo { 
 	border: 1px solid white;
 	width: 300px;
 	margin-left: 20px;
+	animation:growLineToPortfolioInfo 1s forwards;
 }
 
 .infoBoxInfo { 
@@ -67,4 +73,52 @@ img {
     right: 50%;
     padding: 10px;
     border: 1px white solid;
+}
+
+.quote
+{
+    z-index: 1000;
+    position: relative;
+	transform: translate(300, 300) rotate(270deg);
+}
+.quoteText
+{
+    transform: rotate(90deg);
+	font-family: 'Raleway', 'Arial', 'Helvetica', 'sans-serif';
+    color: white;
+    font-size: 2.5em;
+    left: -207px;
+    position: absolute;
+    top:45vh;
+    
+    &.quoteTextNoLoop { 
+        animation:initial_Title_Slide_Down 7.3s forwards linear;
+        animation-delay: 3s;
+    }
+    
+    &.quoteTextLoop { 
+        top:-45vh;
+        animation:title_Slide_Down 10s infinite; 
+        animation-timing-function: linear;
+    
+        &:nth-child(3) {
+            animation-delay:3.3s;
+        }
+        
+        &:nth-child(4) {
+            animation-delay:6.67s;
+        }
+    }
+}
+
+@media only screen and (max-width: 549px) {
+
+    .quoteText { 
+        left:-174px;
+        font-size: 30px;
+    }
+
+    .section-wrapper h2 { 
+        font-size: 30px;
+    }
 }
