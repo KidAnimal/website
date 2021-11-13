@@ -1,29 +1,11 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { Component, ElementRef, HostListener, Inject, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 
 // ANIMATIONS 
 import { basicTransition } from '../angular_animations/basicTransition';
 
 // MODELS
 import { ScrollHeight } from '../models/scrollheight.model';
-=======
-=======
->>>>>>> 680b696c7283e4484d1a396f7ae5d926ac702ba9
-=======
->>>>>>> 680b696c7283e4484d1a396f7ae5d926ac702ba9
-import { Component, HostListener, Inject, Input, OnInit } from '@angular/core';
 
-// Animations 
-import { basicTransition } from '../angular_animations/basicTransition';
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 680b696c7283e4484d1a396f7ae5d926ac702ba9
-=======
->>>>>>> 680b696c7283e4484d1a396f7ae5d926ac702ba9
-=======
->>>>>>> 680b696c7283e4484d1a396f7ae5d926ac702ba9
 
 @Component({
   selector: 'app-home',
@@ -34,26 +16,14 @@ import { basicTransition } from '../angular_animations/basicTransition';
 
 export class HomeComponent implements OnInit {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
   scrollHeight:number;
   
-  scrollheights: ScrollHeight = {}
+  scrollHeightObj: ScrollHeight = {}
   
   @ViewChild('home') homeSection: ElementRef;  
   @ViewChild('about') aboutSection: ElementRef; 
-  @ViewChild('portfolio') portfolioSection: ElementRef; 
-  @ViewChild('contact') contactSection: ElementRef; 
-  
+  @ViewChild('portfolio') portfolioSection: ElementRef;
 
-=======
-  scrollHeight:number; 
-  
->>>>>>> 680b696c7283e4484d1a396f7ae5d926ac702ba9
-=======
-  scrollHeight:number; 
-  
->>>>>>> 680b696c7283e4484d1a396f7ae5d926ac702ba9
   @HostListener('window:ScrollTopHeight',['$event']) onScrollEvent(event):void {
     this.scrollHeight = event.detail; 
   }
@@ -76,14 +46,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    this.scrollheights = { 
+    this.scrollHeightObj = { 
       homeScrollHeight: this.homeSection.nativeElement.scrollHeight, 
       aboutScrollHeight: this.aboutSection.nativeElement.scrollHeight, 
-      portfolioScrollHeight: this.portfolioSection.nativeElement.scrollHeight, 
-      contactScrollHeight: this.contactSection.nativeElement.scrollHeight
+      portfolioScrollHeight: this.portfolioSection.nativeElement.scrollHeight
     }
-
-    console.log('ScrollHeights', this.scrollheights);
+    console.log(this.homeSection.nativeElement);
+    const newEvent = new CustomEvent('KAScrollHeightEvent', {detail:this.scrollHeightObj});
+    dispatchEvent(newEvent);  
   }
 
 }

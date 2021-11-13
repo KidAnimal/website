@@ -1,9 +1,9 @@
 <div [ngStyle]="{'backgroundColor': (scrollHeight < 900 || scrollHeight === undefined) ? '#EBC046' : '#FFFFFF'}" 
-    (click)="scrollToSection(0)" class="pageBlock">
+    (click)="scrollToSection('home')" class="pageBlock">
 </div>
 <div [ngStyle]="{'backgroundColor': (scrollHeight < 1800 && scrollHeight >= 900) ? '#EBC046' : '#FFFFFF'}" 
-    (click)="scrollToSection(1000)" class="pageBlock">
+    (click)="scrollToSection('about')" class="pageBlock">
 </div>
 <div [ngStyle]="{'backgroundColor': (scrollHeight < 3000 && scrollHeight >= 1800) ? '#EBC046' : '#FFFFFF'}" 
-    (click)="scrollToSection(1870)" class="pageBlock">
+    (click)="scrollToSection('portfolio')" class="pageBlock">
 </div>

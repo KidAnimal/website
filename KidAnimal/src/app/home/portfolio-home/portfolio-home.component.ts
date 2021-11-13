@@ -31,7 +31,13 @@ export class PortfolioHomeComponent implements OnInit {
     sessionStorage.setItem('home-scroll-height', this.scrollHeight.toString());
   }
 
-  titleStyle(scrollSpeed:number, additionalMargin:number) { 
+  titleStyle(scrollSpeed:number, additionalMargin:number, mobileMargin:number) { 
+
+    if(window.innerWidth < 549 && mobileMargin > 0) {
+      return { 
+        marginTop: `${(scrollSpeed + mobileMargin) - this.scrollHeight }px`
+      }
+    }
     return { 
       marginTop: `${(scrollSpeed + additionalMargin) - this.scrollHeight }px`,
     }

@@ -13,7 +13,7 @@
         <div class="portfolio-row">
           <div class="section-wrapper">
             <h2 
-              [ngStyle]="titleStyle(5, 1700)" 
+              [ngStyle]="titleStyle(5, 1700, 1700)" 
               (click)="onSelected('illustration')">Illustration
             </h2>
             <div *ngIf="isVisible === 'illustration'" class="infoBoxWrapper">
@@ -42,7 +42,7 @@
           </div>
           <div class="section-wrapper">
             <h2 
-              [ngStyle]="titleStyle(2, 2000)" 
+              [ngStyle]="titleStyle(2, 2000, 1700)" 
               (click)="onSelected('programming')">Programming
             </h2>
             <div *ngIf="isVisible === 'programming'" class="infoBoxWrapper">
@@ -71,7 +71,7 @@
           </div>
           <div class="section-wrapper">
             <h2 
-              [ngStyle]="titleStyle(3, 2000)" 
+              [ngStyle]="titleStyle(3, 2000, 1700)" 
               (click)="onSelected('design')">Design
             </h2>
             <div *ngIf="isVisible === 'design'" class="infoBoxWrapper">
