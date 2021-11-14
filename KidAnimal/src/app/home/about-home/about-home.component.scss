@@ -1,7 +1,7 @@
 @import '../../../styles.scss';
 
 .aboutSection { 
-    background: url('../../../assets/images/rough_Background.757ae741d51f99d17d12.png') 0 0/cover no-repeat, 
+    background: url('../../../assets/images/rough_Background.png') 0 0/cover no-repeat, 
 	linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(25,25,25,1) 66%, rgba(0,0,0,1) 100%);
     margin-bottom: 0;
     padding: 0;
@@ -124,14 +124,20 @@
 }
 
 
-@media all and (min-width: 850px) and (max-width: 1024px) {
+@media all and (min-width: 850px) and (max-width: 1024px) and (orientation: portrait) {
 
-    .aboutMain { 
-        font-size: 50px;
-    }
+
 }
 
 @media only screen and (min-width: 550px) and (max-width: 849px) {
+
+    .illustrate { 
+        font-size: 110px;
+        margin-left: 100px; 
+    }
+    .aboutImage { 
+        box-shadow: none;
+    }
 }
 
 @media only screen and (max-width: 549px) {
