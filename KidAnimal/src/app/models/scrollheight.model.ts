@@ -1,38 +1,45 @@
-export class ScrollHeight { 
-  homeScrollHeight?: number; 
-  aboutScrollHeight?: number; 
-  portfolioScrollHeight?: number; 
+export class ScrollHeight {
+  homeScrollHeight?: number;
+  aboutScrollHeight?: number;
+  portfolioScrollHeight?: number;
 
-  constructor(options: any) { 
-      this.homeScrollHeight = options.homeScrollHeight; 
-      this.aboutScrollHeight = options.aboutScrollHeight; 
+  constructor(options: any) {
+      this.homeScrollHeight = options.homeScrollHeight;
+      this.aboutScrollHeight = options.aboutScrollHeight;
       this.portfolioScrollHeight = options.portfolioScrollHeight;
   }
 }
 
-export class ScrollHeightElements { 
-  nativeElement?: any; 
+export class ScrollHeightElements {
+  nativeElement?: any;
   scrollTop?: number;
-  travelDistance?: number;
-  // travelDistance: TravelDistanceEnums;
-  startScrollHeight?: number;
-  rateOfChange?: number; 
+  travelDistance: TravelDistanceEnums;
+  rateOfChange?: TravelSpeedEnums;
 
-  constructor(options: any) { 
+  constructor(options: any) {
     this.nativeElement = options.nativeElement;
-    this.scrollTop = options.scrollTop; 
-    this.travelDistance = options.travelDistance; 
-    this.startScrollHeight = options.startScrollHeight;
-    this.rateOfChange = options.rateOfChange; 
+    this.scrollTop = options.scrollTop;
+    this.travelDistance = options.travelDistance;
+    this.rateOfChange = options.rateOfChange;
 
   }
 }
 
-export enum TravelDistanceEnums { 
-  xshort = 1,
-  short = 2, 
-  medium = 3, 
-  long = 4, 
-  extraLong = 5, 
-  wtf = 6 
-} 
+export enum TravelDistanceEnums {
+  xshort = 10,
+  short = 20,
+  medium = 30,
+  long = 40,
+  extraLong = 50,
+  wtf = 60
+}
+
+export enum TravelSpeedEnums {
+  vSlow  = 1,
+  slow = 25,
+  paced = 50,
+  fast = 100,
+  faster = 150,
+  fastest = 200,
+  wtfIsThisSeriously = 300
+}

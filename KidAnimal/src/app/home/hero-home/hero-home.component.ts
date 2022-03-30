@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, QueryList, ViewChildren } from '@angular/core';
 
 // MODELS
-import { ScrollHeightElements } from 'src/app/models/scrollheight.model';
+import { ScrollHeightElements, TravelDistanceEnums, TravelSpeedEnums } from 'src/app/models/scrollheight.model';
 
 @Component({
   selector: 'app-hero-home',
@@ -24,7 +24,6 @@ export class HeroHomeComponent implements OnInit, AfterViewInit {
     if (this.scrollHeight > 100) {
       this.scollPassedPoint = true
     }
-
     this.getScrollHeights();
   }
 
@@ -32,31 +31,33 @@ export class HeroHomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.scrollElement.toArray().forEach((item) => {
-      this.scrollElementMap.push({
-        nativeElement: item.nativeElement,
-        scrollTop: item.nativeElement.scrollHeight,
-        startScrollHeight: 0,
-        // travelDistance: item.nativeElement.id,
-        travelDistance: 400,
-        rateOfChange: 4
-      })
-    });
+    this.createScrollElementArray();
   }
 
   getScrollHeights() {
     this.scrollElementMap.forEach(element => {
-      // if (element.travelDistance <= this.scrollHeight && element.startScrollHeight >= this.scrollHeight) {
         if (element.travelDistance >= this.scrollHeight) {
-          element.scrollTop = this.scrollHeight;
           this.scrollElement.toArray().forEach((item) => {
-          this.height = element.scrollTop + element.rateOfChange;
-          item.nativeElement.style =  `margin-bottom:${this.height}px`; 
-          // if (item.nativeElement === element.nativeElement) {
-          //   console.log('item', item.nativeElement);
-          // }
+            let calc = this.scrollHeight + element.rateOfChange;
+            console.log(calc);
+            this.scrollHeight > 0 ? this.height = this.scrollHeight + element.rateOfChange : this.height = this.scrollHeight;
+            item.nativeElement.style =  `margin-bottom:${this.height}px`;
         });
       }
+    });
+  }
+
+  createScrollElementArray() {
+    this.scrollElement.toArray().forEach((item) => {
+      let configArray = item.nativeElement.id.split("-");
+      const travelDistance: TravelDistanceEnums = (<any>TravelDistanceEnums)[configArray[0]];
+      const travelSpeed: TravelSpeedEnums = (<any>TravelSpeedEnums)[configArray[1]];
+      this.scrollElementMap.push({
+        nativeElement: item.nativeElement,
+        scrollTop: item.nativeElement.scrollHeight,
+        travelDistance: travelDistance,
+        rateOfChange: travelSpeed
+      })
     });
   }
 }
