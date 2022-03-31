@@ -13,25 +13,36 @@ export class ScrollHeight {
 export class ScrollHeightElements {
   nativeElement?: any;
   scrollTop?: number;
+  startScrollHeight?: StartScrollHeightEnums;
   travelDistance: TravelDistanceEnums;
   rateOfChange?: TravelSpeedEnums;
 
   constructor(options: any) {
     this.nativeElement = options.nativeElement;
-    this.scrollTop = options.scrollTop;
-    this.travelDistance = options.travelDistance;
-    this.rateOfChange = options.rateOfChange;
+    this.scrollTop = options.scrollTop || 0;
+    this.startScrollHeight = options.startScrollHeight || 0;
+    this.travelDistance = options.travelDistance || TravelDistanceEnums.medium;
+    this.rateOfChange = options.rateOfChange || TravelSpeedEnums.paced;
 
   }
 }
 
+export enum StartScrollHeightEnums {
+  vClose = 300,
+  close = 400,
+  norm = 500,
+  far = 600,
+  vFar = 700,
+  FarAF = 800
+}
+
 export enum TravelDistanceEnums {
-  xshort = 10,
-  short = 20,
-  medium = 30,
-  long = 40,
-  extraLong = 50,
-  wtf = 60
+  xshort = 100,
+  short = 200,
+  medium = 300,
+  long = 400,
+  extraLong = 500,
+  wtf = 600
 }
 
 export enum TravelSpeedEnums {
