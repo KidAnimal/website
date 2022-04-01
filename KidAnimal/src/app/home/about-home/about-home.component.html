@@ -7,18 +7,20 @@
     </div>
     <div class="aboutSection">
       <div class="aboutMain">
-          <h2 class="illustrate" [ngStyle]="titleStyle(0.35,0,0)"><span *ngIf="isMobile">_</span>Illustrating Earth<span *ngIf="isMobile">_</span></h2>
+          <h2 class="illustrate"><span *ngIf="isMobile">_</span>Illustrating Earth<span *ngIf="isMobile">_</span></h2>
       </div>
       <div class="aboutImage_Wrapper">
-        <img class="aboutImage" [ngStyle]="titleStyle(0.6, 800, 700)" src='../assets/images/portfolio_6.jpg' alt="Sorna" />
+        <img class="aboutImage" src='../assets/images/portfolio_6.jpg' alt="Sorna" />
       </div>
       <div *ngIf="!isMobile">
         <svg class="aboutLine1" height="400" width="400">
           <line class="line1" x1="300" y1="0" x2="300" y2="2000" style="stroke:white;stroke-width:8" />
         </svg>
       </div>
-      <div class="shortBio">
-        <span class="sectionAboutText" [ngStyle]="titleStyle(0.7, 450, 720)">As an artist from the time I was little I have gone
+      <div class="shortBio" id="close-short-slow" #scrollElement>
+        <!-- <span class="sectionAboutText" [ngStyle]="titleStyle(0.7, 450, 720)"> -->
+        <span class="sectionAboutText">
+          As an artist from the time I was little I have gone
           through many phases.
           I have studied in school, through others, and have learned much along the way.
           Throughout the years I have picked up many skills including illustration, programming, design, 3D modeling ect.

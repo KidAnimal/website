@@ -1,7 +1,7 @@
 @import '../../../styles.scss';
 
-.aboutSection { 
-    background: url('../../../assets/images/rough_Background.757ae741d51f99d17d12.png') 0 0/cover no-repeat, 
+.aboutSection {
+    background: url('../../../assets/images/rough_Background.757ae741d51f99d17d12.png') 0 0/cover no-repeat,
 	linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(25,25,25,1) 66%, rgba(0,0,0,1) 100%);
     margin-bottom: 0;
     padding: 0;
@@ -59,8 +59,8 @@
 	margin-left:-30px;
 }
 
-.illustrate { 
-	margin-top: 100px; 
+.illustrate {
+	margin-top: 100px;
 }
 
 .illustrate.fade-in{
@@ -69,7 +69,7 @@
 }
 .shortBio
 {
-	position:relative;
+	position:absolute;
 }
 .sectionAboutText
 {
@@ -98,35 +98,35 @@
     left: -169px;
     position: absolute;
     top:45vh;
-    
-    &.quoteTextNoLoop { 
+
+    &.quoteTextNoLoop {
         animation:initial_Title_Slide_Down 7.3s forwards linear;
         animation-delay: 3s;
     }
-    
-    &.quoteTextLoop { 
+
+    &.quoteTextLoop {
         top:-45vh;
-        animation:title_Slide_Down 10s infinite; 
+        animation:title_Slide_Down 10s infinite;
         animation-timing-function: linear;
-    
+
         &:nth-child(3) {
             animation-delay:3.3s;
         }
-        
+
         &:nth-child(4) {
             animation-delay:6.67s;
         }
     }
 }
 
-@media only screen and (min-width: 1224px) { 
+@media only screen and (min-width: 1224px) {
 
 }
 
 
 @media all and (min-width: 850px) and (max-width: 1024px) {
 
-    .aboutMain { 
+    .aboutMain {
         font-size: 50px;
     }
 }
@@ -136,12 +136,12 @@
 
 @media only screen and (max-width: 549px) {
 
-    .quoteText { 
+    .quoteText {
         left: -170px;
         font-size: 30px;
     }
 
-    .aboutMain { 
+    .aboutMain {
         position: absolute;
         display: flex;
         justify-content: center;
@@ -152,17 +152,17 @@
         text-align: center;
     }
 
-    .aboutImage { 
+    .aboutImage {
         margin-top:144px;
-        min-width: 285px; 
+        min-width: 285px;
         box-shadow:none;
     }
 
-    .aboutSection { 
+    .aboutSection {
         height: 100vh;
     }
 
-    .sectionAboutText { 
+    .sectionAboutText {
         margin-left: 100px;
         margin-right: 100px;
     }

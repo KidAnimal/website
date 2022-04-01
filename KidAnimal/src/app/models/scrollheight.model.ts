@@ -47,11 +47,11 @@ export enum TravelDistanceEnums {
 }
 
 export enum TravelSpeedEnums {
-  vSlow  = 1,
-  slow = 25,
-  paced = 50,
-  fast = 100,
-  faster = 150,
-  fastest = 200,
-  wtfIsThisSeriously = 300
+  vSlow  = 0.5,
+  slow = 1,
+  paced = 1.2,
+  fast = 1.5,
+  faster = 1.7,
+  fastest = 2.0,
+  wtfIsThisSeriously = 2.5
 }

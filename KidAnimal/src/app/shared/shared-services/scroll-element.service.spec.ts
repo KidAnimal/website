@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ScrollPictureService } from './scroll-picture.service';
+import { ScrollElementService } from './scroll-element.service';
 
-describe('ScrollPictureService', () => {
-  let service: ScrollPictureService;
+describe('ScrollElementService', () => {
+  let service: ScrollElementService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ScrollPictureService);
+    service = TestBed.inject(ScrollElementService);
   });
 
   it('should be created', () => {

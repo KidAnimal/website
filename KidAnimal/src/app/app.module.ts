@@ -15,6 +15,7 @@ import { HeroHomeComponent } from './home/hero-home/hero-home.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { SocialLinksComponent } from './shared/social-links/social-links.component';
 import { PaginationComponent } from './shared/pagination/pagination.component';
+import { ScrolledPassedPointDirective } from './shared/directives/scrolled-passed-point.directive';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { PaginationComponent } from './shared/pagination/pagination.component';
     IntroductionComponent,
     SocialLinksComponent,
     PaginationComponent,
+    ScrolledPassedPointDirective
   ],
   imports: [
     BrowserModule,
@@ -40,5 +42,5 @@ import { PaginationComponent } from './shared/pagination/pagination.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
 }
