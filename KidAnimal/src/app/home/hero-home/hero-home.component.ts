@@ -36,15 +36,16 @@ export class HeroHomeComponent implements OnInit, AfterViewInit {
 
   getScrollHeights() {
     this.scrollElementMap.forEach(element => {
-      if ((element.nativeElement.offsetTop - element.startScrollHeight) + element.rateOfChange <= this.scrollHeight) {
+      if (element.startScrollHeight < this.scrollHeight) {
           this.scrollElement.toArray().forEach((item) => {
-            let calc = (this.scrollHeight + element.rateOfChange) - element.startScrollHeight;
-            this.scrollHeight > 0 ? this.height = calc : this.height = 0;
+            // Add in the rate of change to the calc math
+            let calc;
+            // this.scrollHeight <= element.startScrollHeight  ? calc = this.scrollHeight + element.startScrollHeight : calc = this.scrollHeight - element.startScrollHeight;
+            calc = this.scrollHeight - element.startScrollHeight;
+            // this.scrollHeight > 0 ? this.height = calc : this.height = 0;
+            this.height = calc;
             item.nativeElement.style =  `margin-bottom:${this.height}px`;
         });
-      }
-      else {
-        element.nativeElement.style =  `margin-bottom:${0}px`;
       }
     });
   }
