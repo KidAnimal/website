@@ -37,15 +37,13 @@ export class HeroHomeComponent implements OnInit, AfterViewInit {
   getScrollHeights() {
     this.scrollElementMap.forEach(element => {
       if (element.startScrollHeight < this.scrollHeight) {
-          this.scrollElement.toArray().forEach((item) => {
-            // Add in the rate of change to the calc math
-            let calc;
-            // this.scrollHeight <= element.startScrollHeight  ? calc = this.scrollHeight + element.startScrollHeight : calc = this.scrollHeight - element.startScrollHeight;
-            calc = this.scrollHeight - element.startScrollHeight;
-            // this.scrollHeight > 0 ? this.height = calc : this.height = 0;
-            this.height = calc;
-            item.nativeElement.style =  `margin-bottom:${this.height}px`;
-        });
+        console.log(element.nativeElement.id, element.marginBottom);
+        element.nativeElement.offsetHeight <= this.scrollHeight  ? element.marginBottom = this.scrollHeight + element.startScrollHeight : element.marginBottom = this.scrollHeight - element.startScrollHeight;
+        element.marginBottom = this.scrollHeight - element.startScrollHeight;
+        console.log("calc", element.marginBottom);
+        // this.scrollHeight > 0 ? this.height = calc : this.height = 0;
+        this.height = element.marginBottom;
+        element.nativeElement.style =  `margin-bottom:${this.height}px`;
       }
     });
   }
@@ -61,7 +59,8 @@ export class HeroHomeComponent implements OnInit, AfterViewInit {
         scrollTop: item.nativeElement.scrollHeight,
         startScrollHeight: startScrollHeight,
         travelDistance: travelDistance,
-        rateOfChange: travelSpeed
+        rateOfChange: travelSpeed,
+        marginBottom: 0
       })
     });
   }
