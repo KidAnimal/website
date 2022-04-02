@@ -27,7 +27,7 @@ export class ScrollElementService {
   getScrollHeights(scrollDirection: string, scrollHeight:number, scrollElementMap: ScrollHeightElements[]) {
     scrollElementMap.forEach(element => {
       if (scrollHeight > element.scrollTop - element.startScrollHeight) {
-        if (scrollDirection === "Up") {
+        if (scrollDirection === "Up" && scrollHeight) {
           console.log((element.bottom + element.rateOfChange));
           element.bottom += element.rateOfChange;
         }
