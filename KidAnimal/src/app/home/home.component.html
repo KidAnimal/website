@@ -3,11 +3,11 @@
 <ng-container *ngIf="status === 'intro'">
     <app-introduction></app-introduction>
 </ng-container>
-<ng-container *ngIf="status === 'ready'"> 
+<ng-container *ngIf="status === 'ready'">
     <app-pagination></app-pagination>
-    <div #home><app-hero-home></app-hero-home></div>
-    <div #about><app-about-home></app-about-home></div>
-    <div #portfolio><app-portfolio-home></app-portfolio-home></div>
+    <div #home><app-hero-home [scrollDirection] = "scrollDirection"></app-hero-home></div>
+    <div #about><app-about-home [scrollDirection] = "scrollDirection"></app-about-home></div>
+    <div #portfolio><app-portfolio-home [scrollDirection] = "scrollDirection"></app-portfolio-home></div>
     <app-contact></app-contact>
     <app-social-links></app-social-links>
 </ng-container>

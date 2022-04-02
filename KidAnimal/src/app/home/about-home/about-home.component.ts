@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ScrollHeightElements } from 'src/app/models/scrollheight.model';
 import { ScrollElementService } from 'src/app/shared/shared-services/scroll-element.service';
 
@@ -8,6 +8,8 @@ import { ScrollElementService } from 'src/app/shared/shared-services/scroll-elem
   styleUrls: ['./about-home.component.scss']
 })
 export class AboutHomeComponent implements OnInit {
+
+  @Input() scrollDirection: string = "none";
 
   scrollHeight:number;
   isMobile:boolean = false;
@@ -19,7 +21,7 @@ export class AboutHomeComponent implements OnInit {
 
   @HostListener('window:ScrollTopHeight',['$event']) onScrollEvent(event):void {
     this.scrollHeight = event.detail;
-    this.scrollElementService.getScrollHeights(this.scrollHeight, this.scrollElementMap);
+    this.scrollElementService.getScrollHeights(this.scrollDirection, this.scrollHeight, this.scrollElementMap);
   }
 
   @HostListener('window:resize',['$event']) onResizeEvent(event):void {
@@ -36,17 +38,5 @@ export class AboutHomeComponent implements OnInit {
     this.scrollElementMap = this.scrollElementService.createScrollElementArray(this.scrollElement);
     this.scrollHeight = this.scrollElementService.scrollHeight;
   }
-
-  // titleStyle(value:number, additionalMargin:number, mobileMargin:number) {
-  //   if(window.innerWidth < 549 && mobileMargin > 0) {
-  //     return {
-  //       marginTop: `${(this.scrollHeight * - value) + mobileMargin}px`
-  //     }
-  //   }
-
-  //   return {
-  //     marginTop: `${(this.scrollHeight * - value) + additionalMargin}px`
-  //   }
-  // }
 
 }

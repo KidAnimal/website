@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ScrollHeightElements } from 'src/app/models/scrollheight.model';
 import { ScrollElementService } from 'src/app/shared/shared-services/scroll-element.service';
 
@@ -9,6 +9,7 @@ import { ScrollElementService } from 'src/app/shared/shared-services/scroll-elem
 })
 export class PortfolioHomeComponent implements OnInit, AfterViewInit {
 
+  @Input() scrollDirection: string = "none";
   isVisible = '';
   scrollHeight:number;
   scrollElementMap: ScrollHeightElements[] = [];
@@ -19,7 +20,7 @@ export class PortfolioHomeComponent implements OnInit, AfterViewInit {
 
   @HostListener('window:ScrollTopHeight',['$event']) onScrollEvent(event):void {
     this.scrollHeight = event.detail;
-    this.scrollElementService.getScrollHeights(this.scrollHeight, this.scrollElementMap);
+    this.scrollElementService.getScrollHeights(this.scrollDirection, this.scrollHeight, this.scrollElementMap);
   }
 
   ngOnInit(): void {
@@ -27,6 +28,7 @@ export class PortfolioHomeComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.scrollElementMap = this.scrollElementService.createScrollElementArray(this.scrollElement);
+    console.log('scrollElement',this.scrollElement);
   }
 
   onSelected(selection:string):string {

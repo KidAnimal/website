@@ -22,13 +22,26 @@ export class HomeComponent implements OnInit {
   // Go to View Button Variables
   scrollHeight:number;
   scrollHeightObj: ScrollHeight = {}
+  previousScrollHeight: number = 0;
+  scrollDirection: string = "none";
 
   @ViewChild('home') homeSection: ElementRef;
   @ViewChild('about') aboutSection: ElementRef;
   @ViewChild('portfolio') portfolioSection: ElementRef;
 
-  @HostListener('window:ScrollTopHeight',['$event']) onScrollEvent(event):void {
+  @HostListener('window:ScrollTopHeight',['$event']) onScrollEvent(event): string {
     this.scrollHeight = event.detail;
+    if(this.previousScrollHeight === 0) {
+      this.previousScrollHeight = this.scrollHeight;
+    }
+    if(this.previousScrollHeight > this.scrollHeight) {
+      this.scrollDirection = "Up";
+    }
+    else {
+      this.scrollDirection = "Down";
+    }
+    this.previousScrollHeight = this.scrollHeight;
+    return this.scrollDirection;
   }
 
   constructor() {

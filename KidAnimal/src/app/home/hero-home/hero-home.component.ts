@@ -11,6 +11,7 @@ import { ScrollElementService } from 'src/app/shared/shared-services/scroll-elem
 })
 export class HeroHomeComponent implements OnInit, AfterViewInit {
 
+  @Input() scrollDirection: string = "none";
   scrollHeight: number;
   scrollElementMap: ScrollHeightElements[] = [];
   scrollPassedPoint: boolean = false;
@@ -22,7 +23,7 @@ export class HeroHomeComponent implements OnInit, AfterViewInit {
     if (this.scrollHeight > 100) {
       this.scrollPassedPoint = true
     }
-    this.scrollElementService.getScrollHeights(this.scrollHeight, this.scrollElementMap);
+    this.scrollElementService.getScrollHeights(this.scrollDirection, this.scrollHeight, this.scrollElementMap);
   }
 
   constructor(private scrollElementService: ScrollElementService) { }
