@@ -24,18 +24,20 @@ export class ScrollElementService {
 
   constructor() { }
 
-  getScrollHeights(scrollDirection: string, scrollHeight:number, scrollElementMap: ScrollHeightElements[]) {
+  getScrollHeights(scrollDirection: string, scrollHeight:number, scrollElementMap: ScrollHeightElements[]): void {
     scrollElementMap.forEach(element => {
-      if (scrollHeight > element.scrollTop - element.startScrollHeight) {
-        if (scrollDirection === "Up" && scrollHeight) {
-          console.log((element.bottom + element.rateOfChange));
-          element.bottom += element.rateOfChange;
-        }
-        if (scrollDirection === "Down") {
-          element.bottom -= element.rateOfChange;
-        }
-        element.nativeElement.style =  `top:${element.bottom}px`;
-      };
+      if (scrollHeight < element.scrollTop - element.startScrollHeight) {
+        return;
+      }
+      if (scrollDirection === "Up") {
+        element.bottom = Math.floor(element.bottom + element.rateOfChange);
+        console.log("up", element.bottom);
+      }
+      else if (scrollDirection === "Down") {
+        element.bottom = Math.floor(element.bottom - element.rateOfChange);
+        console.log("Down", element.bottom);
+      }
+      element.nativeElement.style =  `top:${element.bottom}px`;
     });
   }
 
