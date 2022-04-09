@@ -16,9 +16,9 @@ export class ScrollHeightElements {
   startScrollHeight?: StartScrollHeightEnums;
   travelDistance: TravelDistanceEnums;
   rateOfChange?: TravelSpeedEnums;
-  offsetTop?: number;
-  offsetHeight?: number;
+  currentScrollPosition?: number; 
   bottom?: number;
+  initialBottom?: number; 
 
   constructor(options: any) {
     this.nativeElement = options.nativeElement;
@@ -26,9 +26,9 @@ export class ScrollHeightElements {
     this.startScrollHeight = options.startScrollHeight || 0;
     this.travelDistance = options.travelDistance || TravelDistanceEnums.medium;
     this.rateOfChange = options.rateOfChange || TravelSpeedEnums.paced;
-    this.offsetTop = options.offsetTop || 0;
-    this.offsetHeight = options.offsetHeight || 0;
+    this.currentScrollPosition = options.currentScrollPosition || 0; 
     this.bottom = options.marginBottom || 0;
+    this.initialBottom = options.initialBottom || 0; 
   }
 }
 

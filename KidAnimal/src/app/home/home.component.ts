@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   scrollHeightObj: ScrollHeight = {}
   previousScrollHeight: number = 0;
   scrollDirection: string = "none";
+  currentScrollDistance: number = 1; 
 
   @ViewChild('home') homeSection: ElementRef;
   @ViewChild('about') aboutSection: ElementRef;

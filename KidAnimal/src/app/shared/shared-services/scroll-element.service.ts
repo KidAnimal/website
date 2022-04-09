@@ -24,18 +24,23 @@ export class ScrollElementService {
 
   constructor() { }
 
-  getScrollHeights(scrollDirection: string, scrollHeight:number, scrollElementMap: ScrollHeightElements[]): void {
+  getScrollHeights(scrollDirection: string, scrollHeight: number, scrollElementMap: ScrollHeightElements[]): void {
     scrollElementMap.forEach(element => {
-      if (scrollHeight < element.scrollTop - element.startScrollHeight) {
-        return;
+      // Theres something here... 
+      // We need to basically get the movement bounds 
+      // Then make it so that when in that range it can move based on the 
+      // Position of that thing
+
+      if (scrollDirection === "Up" && scrollHeight > element.initialBottom) {
+        element.bottom += element.rateOfChange;
+        // element.bottom -= element.rateOfChange * element.currentScrollPosition;
+        // element.bottom -= element.currentScrollPosition * element.rateOfChange;
       }
-      if (scrollDirection === "Up") {
-        element.bottom = Math.floor(element.bottom + element.rateOfChange);
-        console.log("up", element.bottom);
-      }
-      else if (scrollDirection === "Down") {
-        element.bottom = Math.floor(element.bottom - element.rateOfChange);
-        console.log("Down", element.bottom);
+      if (scrollDirection === "Down" && scrollHeight < element.startScrollHeight) {
+        console.log("scrollHeight", scrollHeight);
+        element.bottom -= element.rateOfChange;
+        // element.bottom += element.rateOfChange * element.currentScrollPosition;
+        // element.bottom -= element.currentScrollPosition * element.rateOfChange;
       }
       element.nativeElement.style =  `top:${element.bottom}px`;
     });
@@ -50,13 +55,13 @@ export class ScrollElementService {
       const travelSpeed: TravelSpeedEnums = (<any>TravelSpeedEnums)[configArray[2]];
       this.scrollElementMap.push({
         nativeElement: item.nativeElement,
-        scrollTop: result.top,
-        startScrollHeight: startScrollHeight,
+        scrollTop: Math.floor(result.top),
+        startScrollHeight: Math.floor(result.top) - startScrollHeight,
         travelDistance: travelDistance,
         rateOfChange: travelSpeed,
-        offsetTop: item.nativeElement.offsetTop,
-        offsetHeight: item.nativeElement.offsetHeight,
-        bottom: result.top
+        currentScrollPosition: 1,
+        bottom: (Math.floor(result.top)),
+        initialBottom: (Math.floor(result.top))
       })
     });
     return this.scrollElementMap;

@@ -1,6 +1,7 @@
 <div 
   (scroll)="scrollHandler($event)" 
   class="viewport viewport-a"
+  id="viewport"
   [@routeAnimations]="prepareRoute(outlet)"
   >
   <router-outlet 

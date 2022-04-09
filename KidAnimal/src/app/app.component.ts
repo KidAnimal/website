@@ -24,15 +24,14 @@ export class AppComponent {
   constructor() {}
 
   @HostListener('window:ScrollToPageSection', ['$event']) onPaginationHandler(event) {
-    let element = document.getElementsByClassName("viewport"),
-      viewPort = element[0];
-      viewPort.scrollTop = event.detail;
+    let element = document.getElementById("viewport");
+    element.scrollTop = event.detail;
   }
 
   @HostListener('document:scroll',['$event']) scrollHandler(event) {
-    let element = document.getElementsByClassName("viewport"),
-        viewPort = element[0];
-    this.scrollTop = viewPort.scrollTop;
+    let element = document.getElementById("viewport");
+    this.scrollTop = element.scrollTop;
+    sessionStorage.setItem('scrollHeight', this.scrollTop.toString());
     const newEvent = new CustomEvent('ScrollTopHeight', {detail: this.scrollTop});
     dispatchEvent(newEvent);
     return this.scrollTop;

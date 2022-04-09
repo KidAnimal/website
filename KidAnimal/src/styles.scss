@@ -5,6 +5,11 @@
 @import '../src/app/master_scss/_variables.scss';
 @import '../src/app/master_scss/_animations.scss';
 
+html, h1, h2, #viewPort { 
+  padding: 0; 
+  margin: 0;
+}
+
 body { 
     background-image: url('/KidAnimal/src/assets/images/kid_Animal_BG.png');
     z-index: 1;
