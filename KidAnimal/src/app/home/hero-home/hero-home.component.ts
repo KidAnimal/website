@@ -35,4 +35,15 @@ export class HeroHomeComponent implements OnInit, AfterViewInit {
     this.scrollElementMap = this.scrollElementService.createScrollElementArray(this.scrollElement);
     this.scrollHeight = this.scrollElementService.scrollHeight;
   }
+
+  getHeight(type) { 
+    setTimeout(() => { 
+      if(type === 'Starting') { 
+        return this.scrollHeight; 
+      }
+      if(type === "Ending") {
+        return this.scrollElementMap[0].scrollTop;
+      }
+    }, 1000);
+  }
 }
