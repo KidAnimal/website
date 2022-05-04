@@ -37,7 +37,7 @@
 	margin-right:10%;
 }
 
-img { 
+img {
 	position: absolute;
     right: 10%;
     top: 5%;
@@ -49,26 +49,30 @@ img {
 .portfolio-row {
 	display: flex;
     flex-direction: column;
-    margin: 10% 0 0 10%;
+    margin-left: 10%;
 }
-.section-wrapper { 
+.section-wrapper {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 
-	h2 { 
+	h2 {
 		font-size:100px;
 	}
 }
 
-.lineToInfo { 
+#programming, #illustration, #design {
+  margin-top: 300px;
+}
+
+.lineToInfo {
 	border: 1px solid white;
 	width: 300px;
 	margin-left: 20px;
 	animation:growLineToPortfolioInfo 1s forwards;
 }
 
-.infoBoxInfo { 
+.infoBoxInfo {
 	position: absolute;
     right: 50%;
     padding: 10px;
@@ -90,21 +94,21 @@ img {
     left: -207px;
     position: absolute;
     top:45vh;
-    
-    &.quoteTextNoLoop { 
+
+    &.quoteTextNoLoop {
         animation:initial_Title_Slide_Down 7.3s forwards linear;
         animation-delay: 3s;
     }
-    
-    &.quoteTextLoop { 
+
+    &.quoteTextLoop {
         top:-45vh;
-        animation:title_Slide_Down 10s infinite; 
+        animation:title_Slide_Down 10s infinite;
         animation-timing-function: linear;
-    
+
         &:nth-child(3) {
             animation-delay:3.3s;
         }
-        
+
         &:nth-child(4) {
             animation-delay:6.67s;
         }
@@ -113,16 +117,16 @@ img {
 
 @media only screen and (max-width: 549px) {
 
-    .quoteText { 
+    .quoteText {
         left:-198px;
         font-size: 30px;
     }
 
-    .section-wrapper h2 { 
+    .section-wrapper h2 {
         font-size: 30px;
     }
 
-    .portfolio-row { 
+    .portfolio-row {
         margin: 45px 0 0 100px;
     }
 }

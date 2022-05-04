@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 
-// ANIMATIONS 
+// ANIMATIONS
 import { basicTransition } from '../angular_animations/basicTransition';
 
 // MODELS
@@ -17,15 +17,15 @@ import { ScrollHeight } from '../models/scrollheight.model';
 export class HomeComponent implements OnInit {
 
   scrollHeight:number;
-  
+
   scrollHeightObj: ScrollHeight = {}
-  
-  @ViewChild('home') homeSection: ElementRef;  
-  @ViewChild('about') aboutSection: ElementRef; 
+
+  @ViewChild('home') homeSection: ElementRef;
+  @ViewChild('about') aboutSection: ElementRef;
   @ViewChild('portfolio') portfolioSection: ElementRef;
 
   @HostListener('window:ScrollTopHeight',['$event']) onScrollEvent(event):void {
-    this.scrollHeight = event.detail; 
+    this.scrollHeight = event.detail;
   }
 
   status = 'loading';
@@ -35,9 +35,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.status = 'ready';
-    if(sessionStorage.getItem('home-scroll-height')){ 
+    if(sessionStorage.getItem('home-scroll-height')){
       const newEvent = new CustomEvent('ScrollToPageSection', {detail:sessionStorage.getItem('home-scroll-height')});
-      dispatchEvent(newEvent);  
+      dispatchEvent(newEvent);
     }
     // this.status = 'intro';
     // setTimeout(()=> {
@@ -46,14 +46,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    this.scrollHeightObj = { 
-      homeScrollHeight: this.homeSection.nativeElement.scrollHeight, 
-      aboutScrollHeight: this.aboutSection.nativeElement.scrollHeight, 
+    this.scrollHeightObj = {
+      homeScrollHeight: this.homeSection.nativeElement.scrollHeight,
+      aboutScrollHeight: this.aboutSection.nativeElement.scrollHeight,
       portfolioScrollHeight: this.portfolioSection.nativeElement.scrollHeight
     }
     console.log(this.homeSection.nativeElement);
     const newEvent = new CustomEvent('KAScrollHeightEvent', {detail:this.scrollHeightObj});
-    dispatchEvent(newEvent);  
+    dispatchEvent(newEvent);
   }
 
 }

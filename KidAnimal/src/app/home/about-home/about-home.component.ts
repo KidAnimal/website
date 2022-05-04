@@ -24,18 +24,33 @@ export class AboutHomeComponent implements OnInit {
     if(window.innerWidth < 549) {
       this.isMobile = true;
     }
+    this.initGSAPAnimations();
   }
 
-  // titleStyle(value:number, additionalMargin:number, mobileMargin:number) {
-  //   if(window.innerWidth < 549 && mobileMargin > 0) {
-  //     return {
-  //       marginTop: `${(this.scrollHeight * - value) + mobileMargin}px`
-  //     }
-  //   }
-
-  //   return {
-  //     marginTop: `${(this.scrollHeight * - value) + additionalMargin}px`
-  //   }
-  // }
+  initGSAPAnimations() {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to('.illustrate', {
+      y: -400,
+      duration:2,
+      scrollTrigger: {
+        scroller: '.viewport',
+        trigger: '.illustrate',
+        start: '-200% 10%',
+        end: 'center',
+        scrub: true
+      }
+    })
+    gsap.to('.sectionAboutText', {
+      y: -300,
+      duration:3,
+      scrollTrigger: {
+        scroller: '.viewport',
+        trigger: '.illustrate',
+        start: '-200% 10%',
+        end: 'center',
+        scrub: true
+      }
+    })
+  }
 
 }

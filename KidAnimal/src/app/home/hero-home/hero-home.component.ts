@@ -1,23 +1,16 @@
 import { AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { gsap } from 'gsap';
-import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min'
-import "ScrollMagic/scrollmagic/minified/plugins/debug.addIndicators.min";
-import * as ScrollMagic from 'ScrollMagic';
-// MODELS
-import { ScrollHeightElements, StartScrollHeightEnums, TravelDistanceEnums, TravelSpeedEnums } from 'src/app/models/scrollheight.model';
 
 @Component({
   selector: 'app-hero-home',
   templateUrl: './hero-home.component.html',
   styleUrls: ['./hero-home.component.scss']
 })
-export class HeroHomeComponent implements OnInit, AfterViewInit {
+export class HeroHomeComponent implements OnInit {
 
   scrollHeight: number;
   height: number;
   scollPassedPoint: boolean = false;
-  scrollElementMap: ScrollHeightElements[] = [];
-  controller = new ScrollMagic.Controller();
 
   constructor() { }
 
@@ -31,28 +24,21 @@ export class HeroHomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-      //Init ScrollMagic
-
-        var nonsenseScene = new ScrollMagic.Scene({
-            triggerElement:'.blankDiv'
-        })
-        .setClassToggle('.blankDiv','toggleOff')
-        .addTo(this.controller);
-
-        if(document.getElementById('heroText')) {
-          var backgroundScene = new ScrollMagic.Scene({
-              triggerElement:'#heroText',
-              duration:1000,
-              offset: -200
-          })
-          .setTween('.columnPort', {duration: 100, x: 1000})
-          .setClassToggle('.quoteText','title_Slide_Up')
-          .addTo(this.controller)
-          .addIndicators();
-      }
-
+    this.initGSAPAnimations();
   }
 
-  ngAfterViewInit(): void {
+  initGSAPAnimations() {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to('#title', {
+      y: -500,
+      duration:2,
+      scrollTrigger: {
+        scroller: '.viewport',
+        trigger: '#title',
+        start: 'top 60%',
+        end: 'bottom',
+        scrub: true
+      }
+    })
   }
 }
