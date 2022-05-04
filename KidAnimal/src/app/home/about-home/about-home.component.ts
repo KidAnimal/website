@@ -30,7 +30,7 @@ export class AboutHomeComponent implements OnInit {
   initGSAPAnimations() {
     gsap.registerPlugin(ScrollTrigger);
     gsap.to('.illustrate', {
-      y: -400,
+      marginTop: 0,
       duration:2,
       scrollTrigger: {
         scroller: '.viewport',
