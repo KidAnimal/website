@@ -1,5 +1,8 @@
 import { AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
-
+import { gsap } from 'gsap';
+import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min'
+import "ScrollMagic/scrollmagic/minified/plugins/debug.addIndicators.min";
+import * as ScrollMagic from 'ScrollMagic';
 // MODELS
 import { ScrollHeightElements, StartScrollHeightEnums, TravelDistanceEnums, TravelSpeedEnums } from 'src/app/models/scrollheight.model';
 
@@ -14,6 +17,7 @@ export class HeroHomeComponent implements OnInit, AfterViewInit {
   height: number;
   scollPassedPoint: boolean = false;
   scrollElementMap: ScrollHeightElements[] = [];
+  controller = new ScrollMagic.Controller();
 
   constructor() { }
 
@@ -24,44 +28,31 @@ export class HeroHomeComponent implements OnInit, AfterViewInit {
     if (this.scrollHeight > 100) {
       this.scollPassedPoint = true
     }
-    this.getScrollHeights();
   }
 
   ngOnInit(): void {
+      //Init ScrollMagic
+
+        var nonsenseScene = new ScrollMagic.Scene({
+            triggerElement:'.blankDiv'
+        })
+        .setClassToggle('.blankDiv','toggleOff')
+        .addTo(this.controller);
+
+        if(document.getElementById('heroText')) {
+          var backgroundScene = new ScrollMagic.Scene({
+              triggerElement:'#heroText',
+              duration:1000,
+              offset: -200
+          })
+          .setTween('.columnPort', {duration: 100, x: 1000})
+          .setClassToggle('.quoteText','title_Slide_Up')
+          .addTo(this.controller)
+          .addIndicators();
+      }
+
   }
 
   ngAfterViewInit(): void {
-    this.createScrollElementArray();
-  }
-
-  getScrollHeights() {
-    this.scrollElementMap.forEach(element => {
-      if (element.startScrollHeight < this.scrollHeight) {
-        console.log(element.nativeElement.id, element.marginBottom);
-        element.nativeElement.offsetHeight <= this.scrollHeight  ? element.marginBottom = this.scrollHeight + element.startScrollHeight : element.marginBottom = this.scrollHeight - element.startScrollHeight;
-        element.marginBottom = this.scrollHeight - element.startScrollHeight;
-        console.log("calc", element.marginBottom);
-        // this.scrollHeight > 0 ? this.height = calc : this.height = 0;
-        this.height = element.marginBottom;
-        element.nativeElement.style =  `margin-bottom:${this.height}px`;
-      }
-    });
-  }
-
-  createScrollElementArray() {
-    this.scrollElement.toArray().forEach((item) => {
-      let configArray = item.nativeElement.id.split("-");
-      const startScrollHeight: StartScrollHeightEnums = (<any>StartScrollHeightEnums)[configArray[0]];
-      const travelDistance: TravelDistanceEnums = (<any>TravelDistanceEnums)[configArray[1]];
-      const travelSpeed: TravelSpeedEnums = (<any>TravelSpeedEnums)[configArray[2]];
-      this.scrollElementMap.push({
-        nativeElement: item.nativeElement,
-        scrollTop: item.nativeElement.scrollHeight,
-        startScrollHeight: startScrollHeight,
-        travelDistance: travelDistance,
-        rateOfChange: travelSpeed,
-        marginBottom: 0
-      })
-    });
   }
 }

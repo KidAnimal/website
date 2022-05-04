@@ -11,19 +11,9 @@
       <div class="heroImageWrapper">
         <div class="heroImage" [ngClass]="(scrollHeight > 100) ? 'fade-out': (scollPassedPoint ? 'fade-in':'')"></div>
           <!-- <div id="heroText" class="scrollElement" #scrollElement [ngStyle]="titleStyle(0.5)"> -->
-            <div
-              id="vClose-long-fast"
-              class="heroText scrollElement"
-              #scrollElement
-              >
-              <h1 class="title"><div >Kid</div><div>Animal</div></h1>
+            <div class="heroText" id="heroText">
+              <h1 class="title" id="title"><div >Kid</div><div>Animal</div></h1>
               <span class="titleInfo">Illustration | Design | Programming</span>
-            </div>
-            <div
-              id="close-short-slow"
-              class="scrollElement delete"
-              #scrollElement>
-              <h1 class="title">DELETE ME</h1>
             </div>
         </div>
      </div>

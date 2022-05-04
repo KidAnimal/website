@@ -7,13 +7,13 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class AboutHomeComponent implements OnInit {
 
-  scrollHeight:number; 
-  isMobile:boolean = false; 
-  
+  scrollHeight:number;
+  isMobile:boolean = false;
+
   constructor() { }
 
   @HostListener('window:ScrollTopHeight',['$event']) onScrollEvent(event):void {
-    this.scrollHeight = event.detail; 
+    this.scrollHeight = event.detail;
   }
 
   @HostListener('window:resize',['$event']) onResizeEvent(event):void {
@@ -21,21 +21,21 @@ export class AboutHomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(window.innerWidth < 549) { 
+    if(window.innerWidth < 549) {
       this.isMobile = true;
     }
   }
 
-  titleStyle(value:number, additionalMargin:number, mobileMargin:number) { 
-    if(window.innerWidth < 549 && mobileMargin > 0) {
-      return { 
-        marginTop: `${(this.scrollHeight * - value) + mobileMargin}px`
-      }
-    }
+  // titleStyle(value:number, additionalMargin:number, mobileMargin:number) {
+  //   if(window.innerWidth < 549 && mobileMargin > 0) {
+  //     return {
+  //       marginTop: `${(this.scrollHeight * - value) + mobileMargin}px`
+  //     }
+  //   }
 
-    return { 
-      marginTop: `${(this.scrollHeight * - value) + additionalMargin}px`
-    }
-  }
+  //   return {
+  //     marginTop: `${(this.scrollHeight * - value) + additionalMargin}px`
+  //   }
+  // }
 
 }
